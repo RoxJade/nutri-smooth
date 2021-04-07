@@ -15,8 +15,8 @@ Nutri-Smooth has been created using a variety of languages including HTML, CSS a
 4. [Technologies Used](#Technologies-used)
 5. [Credits](#Credits)
 
-Testing can be found in a separate file:
-[Testing](insert testing.md url)
+Testing and Deployment can be found in a separate file:
+[Testing & Deployment](insert testing.md url)
 
 # UX
 

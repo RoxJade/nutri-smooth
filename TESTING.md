@@ -13,6 +13,7 @@
 
 # Development and Problem Solving
 
+
 ## Issues in development
 
 # Testing for User Stories
@@ -37,6 +38,18 @@ I used the code validators below and Lighthouse (Chrome Dev Tools):
 ## Lighthouse:
 
 # Deployment 
+
+I started the project by creating a repository in GitHub and used the Gitpod IDE to write the code. I deployed the app to Heroku early on in the production of the app. I 
+There were no issues or problems during the heroku deployment process. 
+To deploy the Nutri-smooth web application, I used Heroku. Here is a step-by-step account of the process. 
+1. I started by creating a requirements.txt to list all of apps and dependencies required to run the site. 
+2. In the Gitpod terminal I used the command 'echo web: python app.py > Procfile' to create a Procfile for Heroku to to read the app.py file.
+3. I logged into Heroku and created a new app, calling it 'nutri-smooth' to match the GitHub repository and the title/logo of the site.
+4. I then chose automatic deployment from my GitHub repository, specifying the 'nutri-smooth' repo-name.
+5. Once found, I connected it to my app. 
+6. Before enabling the automatic deployment, I entered the configuration variables (hidden from Heroku inside the env.py file). This included the IP address, port, the secret key (generated using randomkeygenerator.com) a link to MongoDB and the 'nutri_smooth' database. 
+7. Before deploying the site, I went back to Gitpod and committed the Procfile and requirements.txt.
+8. Going back to Heroku, I enabled the automatic deployment and deploy branch. Heroku then built the app and successfully deployed it.
 
 ## Bugs discovered after deployment
 

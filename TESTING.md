@@ -20,6 +20,13 @@ I checked this using a Jinja for loop to iterate through the 'recipe' data. This
 <img alt=data-test-html.png src="testing-images/data-test-html.png" width=30%>
 <img alt=data-test.png src="testing-images/data-test.png" width=35%>
 
+After adding Materialize and the static CSS/Script files, I added a background template to style.css to test the files were connected. 
+At this point Werkzeug pointed out a typo, I had not added a comma into the my script.js tag. Upon fixing this, the background colour worked. 
+
+<img alt=css-test-error.png src="testing-images/css-test-error.png" width=35%>
+<br>
+<img alt=css-test-jinja.png src="testing-images/css-test-jinja.png" width=35%>
+<img alt=css-test-success.png src="testing-images/css-test-success.png" width=35%>
 
 ## Issues in development
 

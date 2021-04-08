@@ -13,6 +13,13 @@
 
 # Development and Problem Solving
 
+The first test I ran at the start of the project was to check the data I had entered when setting up MongoDB was being pulled across successfully from the Mongo database. 
+I checked this using a Jinja for loop to iterate through the 'recipe' data. This was successful. 
+
+<img alt=data-test-app.png src="testing-images/data-test-app.png" width=25%>
+<img alt=data-test-html.png src="testing-images/data-test-html.png" width=30%>
+<img alt=data-test.png src="testing-images/data-test.png" width=35%>
+
 
 ## Issues in development
 

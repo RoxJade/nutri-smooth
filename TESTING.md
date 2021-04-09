@@ -28,6 +28,16 @@ At this point Werkzeug pointed out a typo, I had not added a comma into the my s
 <img alt=css-test-jinja.png src="testing-images/css-test-jinja.png" width=35%>
 <img alt=css-test-success.png src="testing-images/css-test-success.png" width=35%>
 
+I found adding the logo image file to the navbar challenging. As I had not used Flask to add images before, I tried to add the image using the html method. 
+After researching, I realised the correct method was to include the image in the static file and use the 'url_for' Flask method to integrate images ontot the site.
+The following tutorials helped with this: [Codemy - How to Use CSS Javascript and Images With Flask Static Files](https://www.youtube.com/watch?v=w54WLGm4OrE) and [Tech with Tim - Static Files (Custom CSS, Images & Javascript)](https://www.youtube.com/watch?v=tXpFERibRaU).
+
+<img alt=logo-html.png src="testing-images/logo-html.png" width=50%>
+<img alt=logo-broken.png src="testing-images/logo-broken.png" width=25%>
+<br>
+<img alt=logo-flask.png src="testing-images/logo-flask.png" width=50%>
+<img alt=logo-success.png src="testing-images/logo-success.png" width=25%>
+
 ## Issues in development
 
 # Testing for User Stories

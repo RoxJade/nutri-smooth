@@ -1,3 +1,26 @@
+/* font-family: 'Quicksand', sans-serif;
+font-family: 'Raleway', sans-serif; */
+
+/* ----------------------------------- Body */
+
+body {
+    background-color: #fff3e0;
+}
+
+
+/* ----------------------------------- Navbar */
+
 nav {
     box-shadow: none;
+}
+
+nav ul a {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+}
+
+.sidenav li>a {
+    font-family: 'Raleway', sans-serif;
+    display: inline-block;
+    font-size: 18px;
 }

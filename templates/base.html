@@ -14,26 +14,35 @@
     {% endblock %}
     <title>Nutri-Smooth</title>
 </head>
-<body>          
+<body>
+    <!-- Navbar -->          
     <nav class="nav-extended">
         <div class="nav-wrapper orange lighten-5">
             <a href="#!" class="brand-logo"><img src="{{ url_for('static', filename='images/nutri-smooth.svg') }}"
                     width="250" class="brand-logo" alt="nutri-smooth logo"></a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons red-text text-lighten-2">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a class="red-text text-lighten-2" href="sass.html">Sass</a></li>
-                <li><a class="red-text text-lighten-2" href="badges.html">Components</a></li>
-                <li><a class="red-text text-lighten-2" href="collapsible.html">Javascript</a></li>
-                <li><a class="red-text text-lighten-2" href="mobile.html">Mobile</a></li>
+                <li><a class="red-text text-lighten-2" href="#">Home</a></li>
+                <li><a class="red-text text-lighten-2" href="#">Profile</a></li>
+                <li><a class="red-text text-lighten-2" href="#">Add Smoothie</a></li>
+                <li><a class="red-text text-lighten-2" href="#">Manage Categories</a></li>
+                <li><a class="red-text text-lighten-2" href="#">Log Out</a></li>
+                <li><a class="red-text text-lighten-2" href="#">Sign In</a></li>
+                <li><a class="red-text text-lighten-2" href="#">Register</a></li>
             </ul>
         </div>
     </nav>
-    
+    <!-- Mobile SideNav-->
     <ul class="sidenav orange lighten-5" id="mobile-demo">
-        <li><a class="red-text text-lighten-2" href="sass.html">Sass</a></li>
-        <li><a class="red-text text-lighten-2" href="badges.html">Components</a></li>
-        <li><a class="red-text text-lighten-2" href="collapsible.html">Javascript</a></li>
-        <li><a class="red-text text-lighten-2" href="mobile.html">Mobile</a></li>
+        <li><a href="#!" class="brand-logo"><img src="{{ url_for('static', filename='images/nutri-smooth.svg') }}"
+                    width="250" class="brand-logo" alt="nutri-smooth logo"></a></li>
+        <li><a class="red-text text-lighten-2" href="#">Home</a></li>
+        <li><a class="red-text text-lighten-2" href="#">Profile</a></li>
+        <li><a class="red-text text-lighten-2" href="#">Add Smoothie</a></li>
+        <li><a class="red-text text-lighten-2" href="#">Manage Categories</a></li>
+        <li><a class="red-text text-lighten-2" href="#">Log Out</a></li>
+        <li><a class="red-text text-lighten-2" href="#">Sign In</a></li>
+        <li><a class="red-text text-lighten-2" href="#">Register</a></li>
     </ul>
     {% block content %}
     {% endblock %}

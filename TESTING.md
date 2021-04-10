@@ -38,6 +38,20 @@ The following tutorials helped with this: [Codemy - How to Use CSS Javascript an
 <img alt=logo-flask.png src="testing-images/logo-flask.png" width=50%>
 <img alt=logo-success.png src="testing-images/logo-success.png" width=25%>
 
+After creating the registration form I tried to test the functionality I built on app.py, pulling the data through to MongoDB. 
+Werkzeug pointed out a mistake I made with a typo and formatting of my python code. I needed to remove the '.html' on the 'register' variable so the 'insert_one()' method worked properly.
+I then realised I also needed to format the code by removing some unecessary indentation. After I fixed these bugs, I entered the data into the registration form and checked MongoDB to find that it had all succesfully pulled through!
+
+<img alt=register-incorrect.png src="testing-images/register-incorrect.png" width=32%>
+<img alt=register-correct.png src="testing-images/register-correct.png" width=30%>
+<br>
+<img alt=register-error.png src="testing-images/register-error.png" width=70%>
+<br>
+<img alt=register-form.png src="testing-images/register-form.png" width=25%>
+<img alt=register-data-success.png src="testing-images/register-data-success.png" width=55%>
+
+
+
 ## Issues in development
 
 # Testing for User Stories

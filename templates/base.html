@@ -32,6 +32,7 @@
             </ul>
         </div>
     </nav>
+
     <!-- Mobile SideNav-->
     <ul class="sidenav orange lighten-5" id="mobile-demo">
         <li><a href="#!" class="brand-logo"><img src="{{ url_for('static', filename='images/nutri-smooth.svg') }}"
@@ -44,8 +45,25 @@
         <li><a class="red-text text-lighten-2" href="#">Sign In</a></li>
         <li><a class="red-text text-lighten-2" href="{{ url_for('register') }}">Register</a></li>
     </ul>
-    {% block content %}
-    {% endblock %}
+
+    <section>
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row flashes">
+                        <h4 class="red lighten-2 center-align grey-text text-lighten-2">{{ message }}</h4>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
+
+
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

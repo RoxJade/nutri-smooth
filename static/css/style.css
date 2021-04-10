@@ -24,3 +24,30 @@ nav ul a {
     display: inline-block;
     font-size: 18px;
 }
+
+/* ----------------------------------- Headers */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* ----------------------------------- Forms */
+
+form {
+    font-family: 'Quicksand', sans-serif;
+}
+
+button {
+    font-family: 'Raleway', sans-serif;
+}
+
+/* label color */
+.input-field label {
+     color: #e57373;
+}
+
+/* valid color */
+.input-field input[type=text].valid {
+     border-bottom: 1px solid #e57373;
+     box-shadow: 0 1px 0 0 #fff3e0;
+}

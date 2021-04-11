@@ -81,6 +81,10 @@ def signin():
 # ---------------------------------------------- User Profile #
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+    """
+    returns user profile page
+    @param username
+    """
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 

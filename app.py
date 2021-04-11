@@ -97,6 +97,11 @@ def logout():
     return redirect(url_for("signin"))
 
 
+@app.route("/add_smoothie")
+def add_smoothie():
+    return render_template("add_smoothie.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

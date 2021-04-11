@@ -51,6 +51,30 @@ def register():
     return render_template("register.html")
 
 
+# -------- Sign in, checks for existing username, incorrect username/password #
+@app.route("/signin", methods=["GET", "POST"])
+def signin():
+    if request.method == "POST":
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            if check_password_hash(
+              existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome to Nutri-Smooth, {}".format(
+                        request.form.get("username")))
+            else:
+                flash("Incorrect Username and/or Password")
+                return redirect(url_for("signin"))
+
+        else:
+            flash("Incorrect Username and or/Password")
+            return redirect(url_for("signin"))
+
+    return render_template("signin.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

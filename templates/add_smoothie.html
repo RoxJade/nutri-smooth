@@ -1,20 +1,66 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="red-text text-lighten-3 center-align">Add your smoothie recipe!</h3>
+    <h3 class="red-text text-lighten-2 center-align">Add your smoothie recipe!</h3>
 
     <div class="row">
         <form class="col s12" method="POST" action="">
+            <!-- Smoothie Name -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="material-icons prefix"></i>
-                    <input id="icon_prefix" type="text" class="validate">
-                    <label for="icon_prefix">Category Name</label>
+                    <i class="material-icons prefix red-text text-lighten-2">local_cafe</i>
+                    <input id="recipe_name" name="recipe_name" minlength="3" maxlength="50"
+                    type="text" class="validate" required>
+                    <label for="recipe_name">Smoothie Name</label>
                 </div>
+            </div>
+            <!-- Recipe Ingredients -->
+            <div class="row">
                 <div class="input-field col s12">
-                    <i class="material-icons prefix">local_cafe</i>
-                    <input id="icon_telephone" type="tel" class="validate">
-                    <label for="icon_telephone">Recipe Name</label>
+                    <i class="material-icons prefix red-text text-lighten-2">menu_book</i>
+                    <textarea id="recipe_ingredients" name="recipe_ingredients" minlength="20" 
+                    maxlength="250" class="materialize-textarea validate" required></textarea>
+                    <label for="recipe_ingredients">Smoothie Ingredients</label>
+                </div>
+            </div>
+            <!-- Recipe Macros -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix red-text text-lighten-2">pie_chart</i>
+                    <textarea id="recipe_macros" name="recipe_macros" minlength="20" 
+                    maxlength="250" class="materialize-textarea validate" required></textarea>
+                    <label for="recipe_macros">Macros</label>
+                </div>
+            </div>
+            <!-- Health Benefits -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix red-text text-lighten-2">spa</i>
+                    <textarea id="health_benefits" name="health_benefits" minlength="20" 
+                    maxlength="250" class="materialize-textarea validate" required></textarea>
+                    <label for="health_benefits">Health Benefits</label>
+                </div>
+            </div>
+            <!-- Add Image -->
+             <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix red-text text-lighten-2">image_search</i>
+                    <input id="image_url" name="img_url" type="url" pattern="https?://.+" class="validate" required>
+                    <label for="image_url">Add a photo via a url image link!</label>
+                    <span class="helper-text" data-error="enter valid URL ( *please be mindful not to add copyright imagery )" data-success="right"></span>
+                </div>
+            </div>
+            <!-- Favourite Switch -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <div class="switch">
+                        <i class="material-icons red-text text-lighten-2">favorite</i>
+                        <label for="is_favourite">
+                            <input type="checkbox" id="is_favourite" name="is_favourite">
+                            <span class="lever"></span>
+                            Is this your favourite smoothie recipe?
+                        </label>
+                    </div>
                 </div>
             </div>
         </form>

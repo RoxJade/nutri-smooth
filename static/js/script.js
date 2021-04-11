@@ -2,4 +2,5 @@
     $('.sidenav').sidenav();
     $('.tabs').tabs();
     $('.tooltipped').tooltip();
+    $('select').formSelect();
   });

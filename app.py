@@ -48,6 +48,8 @@ def register():
 
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
+        return redirect(url_for("profile", username=session["user"]))
+
     return render_template("register.html")
 
 
@@ -64,6 +66,7 @@ def signin():
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome to Nutri-Smooth, {}".format(
                         request.form.get("username")))
+                return redirect(url_for("profile", username=session["user"]))
             else:
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("signin"))
@@ -73,6 +76,14 @@ def signin():
             return redirect(url_for("signin"))
 
     return render_template("signin.html")
+
+
+# ---------------------------------------------- User Profile #
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template("profile.html", username=username)
 
 
 if __name__ == "__main__":

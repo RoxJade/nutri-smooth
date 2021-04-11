@@ -1,5 +1,8 @@
-/* font-family: 'Quicksand', sans-serif;
-font-family: 'Raleway', sans-serif; */
+/* ----------------------------------- Fonts
+font-family: 'Quicksand', sans-serif;
+font-family: 'Raleway', sans-serif; 
+font-family: 'Crimson Pro', serif;
+*/
 
 /* ----------------------------------- Body */
 
@@ -24,10 +27,18 @@ nav ul a {
     font-size: 18px;
 }
 
-/* ----------------------------------- Headers */
+/* ----------------------------------- Headers and Paragraphs */
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Quicksand', sans-serif;
+}
+
+p {
+   font-family: 'Quicksand', sans-serif; 
+}
+
+strong {
+    font-weight: 900;
 }
 
 /* ----------------------------------- Forms */
@@ -55,4 +66,11 @@ button {
 
 .flashes h4 {
     line-height: 2;
+}
+
+/* ----------------------------------- Cards */
+
+.card-content {
+    font-family: 'Crimson Pro', serif;
+    font-size: medium;
 }

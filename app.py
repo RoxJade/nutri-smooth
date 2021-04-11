@@ -83,7 +83,18 @@ def signin():
 def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    return render_template("profile.html", username=username)
+
+    if session["user"]:
+        return render_template("profile.html", username=username)
+
+    return redirect(url_for("signin"))
+
+
+@app.route("/logout")
+def logout():
+    flash("You have been successfully logged out")
+    session.pop("user")
+    return redirect(url_for("signin"))
 
 
 if __name__ == "__main__":

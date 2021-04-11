@@ -50,6 +50,16 @@ I then realised I also needed to format the code by removing some unecessary ind
 <img alt=register-form.png src="testing-images/register-form.png" width=25%>
 <img alt=register-data-success.png src="testing-images/register-data-success.png" width=55%>
 
+After completing the registration form, I duplicated it to create the Sign-in page. I removed all unecessary fields from the form, leaving the username and login. 
+I add functionality for this page, including some defensive programming, checking for existing users and checking for incorrect username and/or password fields. 
+I then tested all of the links for this, entered invalid user data and correct sign in data. All of these tests were successful.
+
+<img alt=signin-functionality.png src="testing-images/signin-functionality.png" width=55%>
+<br>
+<img alt=signin-incorrect.png src="testing-images/signin-incorrect.png" width=35%>
+<img alt=signin-success.png src="testing-images/signin-success.png" width=34%>
+
+
 
 
 ## Issues in development

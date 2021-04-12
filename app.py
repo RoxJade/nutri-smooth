@@ -110,8 +110,30 @@ def logout():
     return redirect(url_for("signin"))
 
 
-@app.route("/add_smoothie")
+@app.route("/add_smoothie", methods=["GET", "POST"])
 def add_smoothie():
+    """
+    Function to allow a registered user to insert a new smoothie
+    recipe onto the site and pulls the data through to MongoDB,
+    then redirects the user back to the get_recipes function.
+    """
+    if request.method == "POST":
+        is_favourite = "on" if request.form.get(
+            "is_favourite") else "off"
+        recipe = {
+            "category_name": request.form.get("category_name"),
+            "recipe_name": request.form.get("recipe_name"),
+            "recipe_ingredients": request.form.get("recipe_ingredients"),
+            "recipe_macros": request.form.get("recipe_macros"),
+            "health_benefits": request.form.get("health_benefits"),
+            "image_url": request.form.get("image_url"),
+            "is_favourite": is_favourite,
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.insert_one(recipe)
+        flash("Your smoothie has been added!")
+        return redirect(url_for("get_recipes"))
+
     """
     Get categories from MongoDB to pull through into category dropdown options
     """

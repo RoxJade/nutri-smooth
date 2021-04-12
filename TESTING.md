@@ -59,7 +59,10 @@ I then tested all of the links for this, entered invalid user data and correct s
 <img alt=signin-incorrect.png src="testing-images/signin-incorrect.png" width=35%>
 <img alt=signin-success.png src="testing-images/signin-success.png" width=34%>
 
+After a my mid-way tutorial session with mentor, he suggested looking into Python docstrings to replace the 'title' comments I had been making for a more professional outcome. 
+I revisited the reading in the Coding Institute module regarding Docstrings and started adding these to my code. 
 
+<img alt=comments-to-docstring.png src="testing-images/comments-to-docstrings.png" width=45%>
 
 
 ## Issues in development

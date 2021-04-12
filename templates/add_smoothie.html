@@ -11,9 +11,9 @@
                     <i class="material-icons prefix red-text text-lighten-2">arrow_drop_down_circle</i>
                     <select id="category_name" name="category_name" class="validate" required>
                         <option class="red-text text-lighten-2" value="" disabled selected>Choose Smoothie Category</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
+                        {% for category in categories %}
+                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                        {% endfor %}
                     </select>
                     <label class="red-text text-lighten-2">Choose Smoothie Category</label>
                 </div>

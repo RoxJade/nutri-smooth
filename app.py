@@ -112,7 +112,11 @@ def logout():
 
 @app.route("/add_smoothie")
 def add_smoothie():
-    return render_template("add_smoothie.html")
+    """
+    Get categories from MongoDB to pull through into category dropdown options
+    """
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("add_smoothie.html", categories=categories)
 
 
 if __name__ == "__main__":

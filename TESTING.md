@@ -59,10 +59,21 @@ I then tested all of the links for this, entered invalid user data and correct s
 <img alt=signin-incorrect.png src="testing-images/signin-incorrect.png" width=35%>
 <img alt=signin-success.png src="testing-images/signin-success.png" width=34%>
 
-After a my mid-way tutorial session with mentor, he suggested looking into Python docstrings to replace the 'title' comments I had been making for a more professional outcome. 
+During my mid-way tutorial session with mentor, he suggested looking into Python docstrings to replace the 'title' comments I had been making for a more professional outcome. 
 I revisited the reading in the Coding Institute module regarding Docstrings and started adding these to my code. 
 
 <img alt=comments-to-docstring.png src="testing-images/comments-to-docstrings.png" width=45%>
+
+After building all of the user authentication, I moved onto developing cards and forms. Throughout the development of these, I constantly referred to the Chrome Dev Tools to 
+experiment with different styles, colour palettes and fonts. It also helped me to find the correct element tags and classes to style in my CSS file.
+On the 'add.smoothie.hmtl' form I ran some tests on the design and found, that although I had included min/max character lengths on the input fields, this wasn't very easy to navigate as a user.
+So I added some 'helper-text' spans to aid the user experience with their data entry. 
+
+<img alt=design-1.png src="testing-images/design-1.png" width=70%>
+<br>
+<img alt=design-2.png src="testing-images/design-2.png" width=30%>
+<img alt=design-3.png src="testing-images/design-3.png" width=30%>
+
 
 
 ## Issues in development

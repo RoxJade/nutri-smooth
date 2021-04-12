@@ -21,13 +21,19 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
+    """Iterates through recipe data in MongoDB and returns recipes.html"""
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes)
 
 
-# ------------ Register and check for existing username #
+# Register and check for existing username #
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    """
+    Iterates though user data collection to check for exisiting
+    username in MongoDB, if found it returns user to register.html
+    with flash notification.
+    """
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
@@ -36,6 +42,10 @@ def register():
             flash("Username already exists")
             return redirect(url_for("register"))
 
+        """
+        Inserts requested data into MongoDB and uses a hash
+        method on user password when storing.
+        """
         register = {
             "firstname": request.form.get("firstname").lower(),
             "lastname": request.form.get("lastname").lower(),
@@ -46,6 +56,8 @@ def register():
             }
         mongo.db.users.insert_one(register)
 
+        """Stores user's registration in session cookies and directs
+        the user to their profile"""
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
@@ -53,7 +65,7 @@ def register():
     return render_template("register.html")
 
 
-# -------- Sign in, checks for existing username, incorrect username/password #
+# Sign in, checks for existing username, incorrect username/password #
 @app.route("/signin", methods=["GET", "POST"])
 def signin():
     if request.method == "POST":
@@ -78,13 +90,10 @@ def signin():
     return render_template("signin.html")
 
 
-# ---------------------------------------------- User Profile #
+# User Profile #
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    """
-    returns user profile page
-    @param username
-    """
+    """returns user profile page @param username"""
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 

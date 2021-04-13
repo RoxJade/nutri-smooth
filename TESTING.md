@@ -88,10 +88,13 @@ Then I changed the 'null' data on the Mongo database to the correct image url. O
 <br>
 <img alt=bug-1-db.png src="testing-images/bug-1-db.png" width=60%>
 
+2. The layout of the page did not load how expected. The new card didn't conform to the columns. To solve this, I realised I needed to move the 'for loop' in recipes.html above the column class in the code to make sure the column was inside the loop.
 
-2. The layout of the page did not load how expected or wanted.
-
-3. The 'Materialize card tabs were not working properly.
+3. The 'Materialize card tabs were not working properly.  When clicked on, the card tabs worked for one card but also activated on all other cards and the information appeared incorrectly.
+To solve this, I decided to replace these with collapsible accordians to display the recipe macros and health benefits. 
+<img alt=bug-3-1.png src="testing-images/bug-3-1.png" width=60%>
+<img alt=bug-3-2.png src="testing-images/bug-3-2.png" width=60%>
+<img alt=bug-3-fix.png src="testing-images/bug-3-fix.png" width=60%>
 
 ## Issues in development
 

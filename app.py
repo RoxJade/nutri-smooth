@@ -141,6 +141,17 @@ def add_smoothie():
     return render_template("add_smoothie.html", categories=categories)
 
 
+@app.route("/edit_smoothie/<recipe_id>", methods=["GET", "POST"])
+def edit_smoothie(recipe_id):
+    """ Target the recipe for editing using the Object Id in MongoDB
+    """
+    recipe = mongo.db.recipes.find_one(
+        {"_id": ObjectId(recipe_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template(
+        "edit_smoothie.html", recipe=recipe, categories=categories)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

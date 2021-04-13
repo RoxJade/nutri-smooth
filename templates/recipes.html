@@ -34,7 +34,7 @@
                                 <p><small> by </small><b class="red-text text-lighten-2">{{ recipe.created_by }}</b></p>
                             </div>
                             <div class="card-action">
-                                <a class="btn-floating btn-small tooltipped waves-effect waves-light red lighten-2" data-position="left"
+                                <a href="{{ url_for('edit_smoothie', recipe_id=recipe._id) }}" class="btn-floating btn-small tooltipped waves-effect waves-light red lighten-2" data-position="left"
                                     data-tooltip="Edit recipe?"><i class="material-icons">add</i></a>
                                 <a class="waves-effect waves-light btn-small right cyan darken-2"><i class="material-icons right">save</i>Save</a>
                     </div>

@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="red-text text-lighten-2 center-align">Edit smoothie recipe</h3>
+
+    <div class="row card-panel grey lighten-4">
+        <form class="col s12" method="POST" action="{{ url_for('edit_smoothie', recipe_id=recipe._id) }}">
+            <!-- Category Dropdown Selection -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix red-text text-lighten-2">arrow_drop_down_circle</i>
+                    <select id="category_name" name="category_name" class="validate" required>
+                        <option class="red-text text-lighten-2" value="" disabled selected>Choose Smoothie Category</option>
+                        {% for category in categories %}
+                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                        {% endfor %}
+                    </select>
+                    <label class="red-text text-lighten-2">Choose Smoothie Category</label>
+                </div>
+            </div>
+            <!-- Smoothie Name -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix red-text text-lighten-2">local_cafe</i>
+                    <input id="recipe_name" name="recipe_name" minlength="2" maxlength="50"
+                    type="text" class="validate cyan-text text-darken-2" required>
+                    <label for="recipe_name">Smoothie Name</label>
+                    <span class="helper-text" data-error="Please use between 2 - 50 characters" data-success="great!">(2 - 50 characters)</span>
+                </div>
+            </div>
+            <!-- Recipe Ingredients -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix red-text text-lighten-2">menu_book</i>
+                    <textarea id="recipe_ingredients" name="recipe_ingredients" minlength="5" 
+                    maxlength="250" class="materialize-textarea validate cyan-text text-darken-2" required></textarea>
+                    <label for="recipe_ingredients">Smoothie Ingredients</label>
+                    <span class="helper-text" data-error="Please use between 5 - 250 characters" data-success="great!">(5 - 250 characters)</span>
+                </div>
+            </div>
+            <!-- Recipe Macros -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix red-text text-lighten-2">pie_chart</i>
+                    <textarea id="recipe_macros" name="recipe_macros" minlength="5" 
+                    maxlength="250" class="materialize-textarea validate cyan-text text-darken-2" required></textarea>
+                    <label for="recipe_macros">Macros</label>
+                    <span class="helper-text" data-error="Please use between 5 - 250 characters" data-success="great!">(5 - 250 characters)</span>
+                </div>
+            </div>
+            <!-- Health Benefits -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix red-text text-lighten-2">spa</i>
+                    <textarea id="health_benefits" name="health_benefits" minlength="5" 
+                    maxlength="250" class="materialize-textarea validate cyan-text text-darken-2" required></textarea>
+                    <label for="health_benefits">Health Benefits</label>
+                    <span class="helper-text" data-error="Please use between 5 - 250 characters" data-success="great!">(5 - 250 characters)</span>
+                </div>
+            </div>
+            <!-- Add Image -->
+             <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix red-text text-lighten-2">image_search</i>
+                    <input id="image_url" name="img_url" type="url" pattern="https?://.+" class="validate cyan-text text-darken-2" required>
+                    <label for="image_url">Add a photo via a url image link!</label>
+                    <span class="helper-text" data-error="Please enter valid URL" data-success="great!">Enter valid URL (*please be mindful not to add copyright imagery)</span>
+                </div>
+            </div>
+            <!-- Favourite Switch -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <div class="switch">
+                        <i class="material-icons red-text text-lighten-2">favorite</i>
+                        <label for="is_favourite">
+                            <input type="checkbox" id="is_favourite" name="is_favourite">
+                            <span class="lever"></span>
+                            Is this one of the most <strong class="cyan-text text-darken-2">awesome</strong> smoothie's you've tried?
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Submit Smoothie -->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button class="btn waves-effect waves-light red lighten-2 center-align" type="submit" name="">Edit my smoothie recipe
+                        <i class="material-icons right">edit</i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

@@ -3,4 +3,5 @@
     $('.tabs').tabs();
     $('.tooltipped').tooltip();
     $('select').formSelect();
+    $('.collapsible').collapsible();
   });

@@ -1,38 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
-
     <div class="row">
-        <div class="col s12 m6">
-            <div class="card">
-                {% for recipe in recipes %}
-
-                <div class="card-image">
-                    <img src="{{ recipe.image_url }}">
-                    <h5 class="card-title"><strong>{{ recipe.recipe_name }}</strong></h5>
-                    {% if recipe.is_favourite == "on" %}
-                        <a class="btn-floating tooltipped halfway-fab waves-effect waves-light red lighten-2" data-position="right" data-tooltip="Favourite!"><i class="material-icons">favorite</i></a>
-                    {% endif %}
-                </div>
-                <div class="card-content">
-                    <h6 class="cyan-text text-darken-2"><strong>{{ recipe.category_name }}</strong></h6>
-                    <p>{{ recipe.recipe_ingredients }}</p>
-                </div>
-                <div class="card-tabs">
-                    <ul class="tabs tabs-fixed-width">
-                        <li class="tab"><a name="recipe_macros" href="#recipe_macros">Macros</a></li>
-                        <li class="tab"><a name="recipe_benefits" class="active" href="#health_benefits">Health Benefits</a></li>
+        {% for recipe in recipes %}
+            <div class="col s12 m4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ recipe.image_url }}">
+                        <h5 class="card-title"><strong>{{ recipe.recipe_name }}</strong></h5>
+                        {% if recipe.is_favourite == "on" %}
+                            <a class="btn-floating tooltipped halfway-fab waves-effect waves-light red lighten-2" data-position="right" data-tooltip="Favourite!"><i class="material-icons">favorite</i></a>
+                        {% endif %}
+                    </div>
+                    <div class="card-content">
+                        <h6 class="cyan-text text-darken-2"><strong>{{ recipe.category_name }}</strong></h6>
+                        <p>{{ recipe.recipe_ingredients }}</p>
+                    </div>
+                    <ul class="collapsible">
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons red-text text-lighten-2">pie_chart</i><h6 class="cyan-text text-darken-2">Macros</h6></div>
+                            <div class="collapsible-body"><span>{{ recipe.recipe_macros }}</span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons red-text text-lighten-2">spa</i><h6 class="cyan-text text-darken-2">Health Benefits</h6></div>
+                            <div class="collapsible-body"><span>{{ recipe.health_benefits }}</span></div>
+                        </li>
                     </ul>
+                    <div class="card-content">
+                        <p>Added by: {{ recipe.created_by }}</p>
+                    </div>
                 </div>
-                <div class="card-content grey lighten-4">
-                    <div name="recipe_macros" id="recipe_macros">{{ recipe.recipe_macros }}</div>
-                    <div name="recipe_benefits" id="health_benefits">{{ recipe.health_benefits }}</div>
-                </div>
-                <div class="card-action">
-                    <p>Added by: {{ recipe.created_by }}</p>
-                </div>
-                {% endfor %}
             </div>
-        </div>
+        {% endfor %}
     </div>
 
 {% endblock %}

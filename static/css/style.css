@@ -78,7 +78,12 @@ button {
 
 /* ----------------------------------- Cards */
 
-.card-content {
+.container {
+    margin: 0, 20px, 0, 20px;
+}
+
+
+.collapsible-body {
     font-family: 'Crimson Pro', serif;
     font-size: medium;
 }

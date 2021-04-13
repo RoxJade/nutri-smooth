@@ -5,7 +5,7 @@
             <div class="col s12 m4">
                 <div class="card">
                     <div class="card-image">
-                        <img src="{{ recipe.image_url }}">
+                        <img src="{{ recipe.image_url }}" alt="Smoothie image">
                         <h5 class="card-title"><strong>{{ recipe.recipe_name }}</strong></h5>
                         {% if recipe.is_favourite == "on" %}
                             <a class="btn-floating tooltipped halfway-fab waves-effect waves-light red lighten-2" data-position="right" data-tooltip="Favourite!"><i class="material-icons">favorite</i></a>
@@ -26,7 +26,7 @@
                         </li>
                     </ul>
                     <div class="card-content">
-                        <p>Added by: {{ recipe.created_by }}</p>
+                        <p><small> by </small><b class="red-text text-lighten-2">{{ recipe.created_by }}</b></p>
                     </div>
                 </div>
             </div>

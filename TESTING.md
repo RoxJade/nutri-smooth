@@ -74,7 +74,24 @@ So I added some 'helper-text' spans to aid the user experience with their data e
 <img alt=design-2.png src="testing-images/design-2.png" width=30%>
 <img alt=design-3.png src="testing-images/design-3.png" width=30%>
 
+I created the post functionality for the user to add their own recipes on the add_smoothies.html page and then tested this. This test revealed 3 bugs I needed to fix:
+1. The image on the newly added recipe was a duplicate of the previous recipe image.
+There was an easy solution to this that I had overlooked in early development. I realised I had left the original image in the code image source code on the get_recipes.html page (where I was using a placeholder image).
+This caused the new image url to get blocked and MongoDB recieved it as null on the database. To correct this, I altered the image src to the correct jinja image request method. 
+Then I changed the 'null' data on the Mongo database to the correct image url. Once refreshed, this worked fine. 
+<img alt=bug-2.png src="testing-images/bug-2.png" width=30%>
+<img alt=bug-1-fix.png src="testing-images/bug-1-fix.png" width=30%>
+<br>
+<img alt=bug-1-code-incorrect.png src="testing-images/bug-1-code-incorrect.png" width=60%>
+<br>
+<img alt=bug-1-code-correct.png src="testing-images/bug-1-code-correct.png" width=50%>
+<br>
+<img alt=bug-1-db.png src="testing-images/bug-1-db.png" width=60%>
 
+
+2. The layout of the page did not load how expected or wanted.
+
+3. The 'Materialize card tabs were not working properly.
 
 ## Issues in development
 

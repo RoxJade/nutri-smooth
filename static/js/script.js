@@ -4,6 +4,7 @@
     $('.tooltipped').tooltip();
     $('select').formSelect();
     $('.collapsible').collapsible();
+    $('.modal').modal();
 
     // Below, script solution taken from Code Institute to set validation functionality on category dropdown:
     // https://github.com/Code-Institute-Solutions/TaskManagerAuth/blob/main/04-AddingATask-WritingToTheDatabase/02-materialize-select-validation/static/js/script.js

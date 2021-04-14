@@ -72,7 +72,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix red-text text-lighten-2">image_search</i>
-                    <input id="image_url" name="img_url" value="{{ recipe.image_url }}" type="url" pattern="https?://.+"
+                    <input id="image_url" name="image_url" value="{{ recipe.image_url }}" type="url" pattern="https?://.+"
                         class="validate cyan-text text-darken-2" required>
                     <label for="image_url">Add a photo via a url image link!</label>
                     <span class="helper-text" data-error="Please enter valid URL" data-success="great!">Enter valid URL (*please be
@@ -101,9 +101,10 @@
                 <div class="col s12 center-align">
                     <button class="btn waves-effect waves-light red lighten-2 center-align" type="submit" name="">Edit my smoothie recipe
                         <i class="material-icons right">edit</i>
+            <!-- Cancel Edit Smoothie -->
                     </button>
                     <a href="{{ url_for('edit_smoothie', recipe_id=recipe._id) }}" class="btn-floating btn tooltipped waves-effect waves-light cyan-text text-darken-2 right" data-position="right"
-                                    data-tooltip="Cancel edit?"><i class="material-icons">cancel</i></a>
+                                data-tooltip="Cancel edit?"><i class="material-icons">cancel</i></a>
                 </div>
             </div>
         </form>

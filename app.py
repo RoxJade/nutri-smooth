@@ -143,7 +143,31 @@ def add_smoothie():
 
 @app.route("/edit_smoothie/<recipe_id>", methods=["GET", "POST"])
 def edit_smoothie(recipe_id):
-    """ Target the recipe for editing using the Object Id in MongoDB
+    """
+    Function to allow a registered user to edit and save edited
+    recipe onto the site and pulls the data through to MongoDB,
+    then redirects the user back to the edit_smoothie page.
+    """
+    if request.method == "POST":
+        is_favourite = "on" if request.form.get(
+            "is_favourite") else "off"
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "recipe_name": request.form.get("recipe_name"),
+            "recipe_ingredients": request.form.get("recipe_ingredients"),
+            "recipe_macros": request.form.get("recipe_macros"),
+            "health_benefits": request.form.get("health_benefits"),
+            "image_url": request.form.get("image_url"),
+            "is_favourite": is_favourite,
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.update(
+            {"_id": ObjectId(recipe_id)}, submit)
+        flash("Your smoothie recipe has been updated!")
+
+    """
+    Target the individual recipe selected by user for
+    editing using the Object Id in MongoDB
     """
     recipe = mongo.db.recipes.find_one(
         {"_id": ObjectId(recipe_id)})

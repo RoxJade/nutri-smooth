@@ -10,33 +10,43 @@
                         {% if recipe.is_favourite == "on" %}
                             <a class="btn-floating tooltipped halfway-fab waves-effect waves-light red lighten-2" data-position="right"
                                 data-tooltip="Favourite!"><i class="material-icons">favorite</i></a>
-                            {% endif %}
+                        {% endif %}
+                    </div>
+                    <div class="card-content">
+                        <h6 class="cyan-text text-darken-2"><strong>{{ recipe.category_name }}</strong></h6>
+                        <p>{{ recipe.recipe_ingredients }}</p>
+                    </div>
+                    <ul class="collapsible">
+                        <li>
+                            <div class="collapsible-header">
+                                <i class="material-icons red-text text-lighten-2">pie_chart</i>
+                                <h6 class="cyan-text text-darken-2">Macros</h6>
                             </div>
-                            <div class="card-content">
-                                <h6 class="cyan-text text-darken-2"><strong>{{ recipe.category_name }}</strong></h6>
-                                <p>{{ recipe.recipe_ingredients }}</p>
+                            <div class="collapsible-body">
+                                <span>{{ recipe.recipe_macros }}</span>
                             </div>
-                            <ul class="collapsible">
-                                <li>
-                                    <div class="collapsible-header"><i class="material-icons red-text text-lighten-2">pie_chart</i>
-                                        <h6 class="cyan-text text-darken-2">Macros</h6>
-                                    </div>
-                                    <div class="collapsible-body"><span>{{ recipe.recipe_macros }}</span></div>
-                                </li>
-                                <li>
-                                    <div class="collapsible-header"><i class="material-icons red-text text-lighten-2">spa</i>
-                                        <h6 class="cyan-text text-darken-2">Health Benefits</h6>
-                                    </div>
-                                    <div class="collapsible-body"><span>{{ recipe.health_benefits }}</span></div>
-                                </li>
-                            </ul>
-                            <div class="card-content">
-                                <p><small> by </small><b class="red-text text-lighten-2">{{ recipe.created_by }}</b></p>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="material-icons red-text text-lighten-2">spa</i>
+                                <h6 class="cyan-text text-darken-2">Health Benefits</h6>
                             </div>
-                            <div class="card-action">
-                                <a href="{{ url_for('edit_smoothie', recipe_id=recipe._id) }}" class="btn-floating btn-small tooltipped waves-effect waves-light red lighten-2" data-position="left"
-                                    data-tooltip="Edit recipe?"><i class="material-icons">add</i></a>
-                                <a class="btn-floating btn-small tooltipped waves-effect waves-light cyan darken-2" data-position="right" data-tooltip="Delete recipe?"><i class="material-icons">delete</i></a>
+                            <div class="collapsible-body"><span>{{ recipe.health_benefits }}</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="card-content">
+                        <p><small> by </small><b class="red-text text-lighten-2">{{ recipe.created_by }}</b></p>
+                    </div>
+                    <div class="card-action">
+                        {% if session.user|lower == recipe.created_by|lower %}
+                            <a href="{{ url_for('edit_smoothie', recipe_id=recipe._id) }}"
+                                class="btn-floating btn-small tooltipped waves-effect waves-light red lighten-2" data-position="left"
+                                data-tooltip="Edit recipe?"><i class="material-icons">add</i>
+                            </a>
+                            <a class="btn-floating btn-small tooltipped waves-effect waves-light cyan darken-2" data-position="right"
+                                data-tooltip="Delete recipe?"><i class="material-icons">delete</i>
+                            </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>

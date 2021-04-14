@@ -43,7 +43,7 @@
                                 class="btn-floating btn-small tooltipped waves-effect waves-light red lighten-2" data-position="left"
                                 data-tooltip="Edit recipe?"><i class="material-icons">add</i>
                             </a>
-                            <a class="btn-floating btn-small tooltipped waves-effect waves-light cyan darken-2" data-position="right"
+                            <a href="{{ url_for('delete_smoothie', recipe_id=recipe._id )}}" class="btn-floating btn-small tooltipped waves-effect waves-light cyan darken-2" data-position="right"
                                 data-tooltip="Delete recipe?"><i class="material-icons">delete</i>
                             </a>
                         {% endif %}

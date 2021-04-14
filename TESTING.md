@@ -96,6 +96,8 @@ To solve this, I decided to replace these with collapsible accordians to display
 <img alt=bug-3-2.png src="testing-images/bug-3-2.png" width=60%>
 <img alt=bug-3-fix.png src="testing-images/bug-3-fix.png" width=60%>
 
+
+
 ## Issues in development
 
 # Testing for User Stories

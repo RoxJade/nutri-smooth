@@ -82,3 +82,15 @@ button {
     font-family: 'Crimson Pro', serif;
     font-size: medium;
 }
+
+/* ----------------------------------- Delete Modal */
+
+.delete-header {
+    margin: 0px;
+}
+
+.modal .modal-footer {
+    text-align: center;
+    padding: 4px 12px;
+    height: 70px;
+}

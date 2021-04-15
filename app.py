@@ -213,6 +213,26 @@ def add_category():
     return render_template("add_category.html")
 
 
+@app.route("/edit_category/<category_id>", methods=["GET", "POST"])
+def edit_category(category_id):
+    """
+    Function to allow an admin user to edit and save new smoothie categories
+    onto the site and pulls the data through to MongoDB, then redirects
+    the user back to the edit_smoothie page.
+    """
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name")
+        }
+        mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+        flash("Your edit has been saved")
+        return redirect(url_for("get_categories"))
+
+    category = mongo.db.categories.find_one(
+        {"_id": ObjectId(category_id)})
+    return render_template("edit_category.html", category=category)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

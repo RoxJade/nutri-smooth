@@ -178,6 +178,10 @@ def edit_smoothie(recipe_id):
 
 @app.route("/delete_smoothie/<recipe_id>")
 def delete_smoothie(recipe_id):
+    """
+    Function to delete an individual smoothie recipe from site and
+    MongoBD limited to that user's uploads.
+    """
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Smoothie recipe deleted")
     return redirect(url_for("get_recipes"))
@@ -185,9 +189,28 @@ def delete_smoothie(recipe_id):
 
 @app.route("/get_categories")
 def get_categories():
-    """Get list of categories from MongoDB and sort them alphabetically"""
+    """
+    Get list of categories from MongoDB and sort them alphabetically.
+    """
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
+
+
+@app.route("/add_category", methods=["GET", "POST"])
+def add_category():
+    """
+    Function to add a new smoothie category to the site
+    and MongoDB, restricted only to the admin user.
+    """
+    if request.method == "POST":
+        category = {
+            "category_name": request.form.get("category_name")
+        }
+        mongo.db.categories.insert_one(category)
+        flash("New smoothie category added!")
+        return redirect(url_for("get_categories"))
+
+    return render_template("add_category.html")
 
 
 if __name__ == "__main__":

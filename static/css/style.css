@@ -94,3 +94,10 @@ button {
     padding: 4px 12px;
     height: 70px;
 }
+
+/* ----------------------------------- Delete Modal */
+
+.social-icon { 
+    width: 20px;
+    height: 20px;
+    margin: 0 5px; }

@@ -19,7 +19,7 @@
     <nav class="nav-extended">
         <div class="nav-wrapper orange lighten-5">
             <a href="#!" class="brand-logo"><img src="{{ url_for('static', filename='images/nutri-smooth.svg') }}"
-                    width="250" class="brand-logo" alt="nutri-smooth logo"></a>
+                    width="250" alt="nutri-smooth logo"></a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons red-text text-lighten-2">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a class="red-text text-lighten-2" href="{{ url_for('get_recipes') }}">Home</a></li>
@@ -62,7 +62,7 @@
             {% if messages %}
                 {% for message in messages %}
                     <div class="row flashes">
-                        <h4 class="red lighten-2 center-align grey-text text-lighten-2">{{ message }}</h4>
+                        <h4 class="red lighten-2 center-align orange-text text-lighten-5">{{ message }}</h4>
                     </div>
                 {% endfor %}
             {% endif %}
@@ -74,6 +74,44 @@
         {% block content %}
         {% endblock %}
     </main>
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <a href="#!" class="brand-logo"><img src="{{ url_for('static', filename='images/nutri-smooth.svg') }}"
+                    width="250" alt="nutri-smooth logo" class="orange lighten-5"></a>
+                    <h5 class="orange-text text-lighten-5">For smoothie lovers...<i class="material-icons orange-text text-lighten-5">favorite</i></h5>
+                    <p class="orange-text text-lighten-5">Nutri-Smooth is your online recipe book for saving and sharing all of your favourite smoothie recipes and their nurtitional benefits!
+                    </p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <ul>
+                        <li><a class="orange-text text-lighten-5" href="{{ url_for('get_recipes') }}"><h5>Home</h5></a></li>
+                        {% if session.user %}
+                        <li><a class="orange-text text-lighten-5" href="{{ url_for('profile', username=session['user']) }}"><h5>Profile</h5></a></li>
+                        <li><a class="orange-text text-lighten-5" href="{{ url_for('add_smoothie') }}"><h5>Add Smoothie</h5></a></li>
+                        {% if session.user|lower == "admin"|lower %}
+                        <li><a class="orange-text text-lighten-5" href="{{ url_for('get_categories') }}"><h5>Manage Categories</h5></a></li>
+                        {% endif %}
+                        <li><a class="orange-text text-lighten-5" href="{{ url_for('logout') }}"><h5>Log Out</h5></a></li>
+                        {% else %}
+                        <li><a class="orange-text text-lighten-5" href="{{ url_for('signin') }}"><h5>Sign In</h5></a></li>
+                        <li><a class="orange-text text-lighten-5" href="{{ url_for('register') }}"><h5>Register</h5></a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container orange-text text-lighten-5">
+                © 2021 Roxanne Boulden
+                <a class="right social-icon" target="_blank" href="#!"><img src="{{ url_for('static', filename='images/facebook.svg') }}" alt="facebook icon"></a>
+                <a class="right social-icon" target="_blank" href="#!"><img src="{{ url_for('static', filename='images/instagram.svg') }}" alt="instagram icon"></a>
+                <a class="right social-icon" target="_blank" href="#!"><img src="{{ url_for('static', filename='images/pinterest.svg') }}" alt="pinterest icon"></a>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

@@ -20,18 +20,18 @@
                             class="btn-floating btn-small tooltipped waves-effect waves-light red lighten-2" data-position="left"
                             data-tooltip="Edit category?"><i class="material-icons">edit</i>
                         </a>
-                        <a href="#modal"
+                        <a href="#modal{{ url_for('delete_category', category_id=category._id) }}"
                             class="btn-floating btn-small modal-trigger tooltipped waves-effect waves-light cyan darken-2" data-position="right"
-                            data-tooltip="Delete category?" data-target="modal"><i
+                            data-tooltip="Delete category?" data-target="modal{{ url_for('delete_category', category_id=category._id) }}"><i
                                 class="material-icons">delete</i>
                         </a>
-                        <div id="modal" class="modal">
+                        <div id="modal{{ url_for('delete_category', category_id=category._id) }}" class="modal">
                             <div class="modal-content">
                                 <h5 class="red-text text-lighten-3 center-align delete-header">Are you sure you want to delete
                                     {{ category.category_name }}?</h5>
                             </div>
                             <div class="modal-footer center-align">
-                                <a href="#"
+                                <a href="{{ url_for('delete_category', category_id=category._id) }}"
                                     class="modal-close waves-effect btn-small">Delete</a>
                                 <a href="#" class="modal-close waves-effect btn-floating btn-small right red lighten-2"><i
                                     class="material-icons">close</i></a>

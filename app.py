@@ -180,7 +180,7 @@ def edit_smoothie(recipe_id):
 def delete_smoothie(recipe_id):
     """
     Function to delete an individual smoothie recipe from site and
-    MongoBD limited to that user's uploads.
+    MongoBD limited to that user's uploaded recipes.
     """
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Smoothie recipe deleted")
@@ -231,6 +231,18 @@ def edit_category(category_id):
     category = mongo.db.categories.find_one(
         {"_id": ObjectId(category_id)})
     return render_template("edit_category.html", category=category)
+
+
+@app.route("/delete_category/<category_id>")
+def delete_category(category_id):
+    """
+    Function to allow an admin user to delete a chosen smoothie category
+    on the site and MongoDB, then redirects the user back to
+    the categories page.
+    """
+    mongo.db.categories.remove({"_id": ObjectId(category_id)})
+    flash("Smoothie category deleted")
+    return redirect(url_for("get_categories"))
 
 
 if __name__ == "__main__":

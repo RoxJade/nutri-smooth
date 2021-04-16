@@ -16,10 +16,10 @@
 </head>
 <body>
     <!-- Navbar -->          
-    <nav class="nav-extended">
+    <nav class="orange lighten-5">
         <div class="nav-wrapper orange lighten-5">
-            <a href="#!" class="brand-logo"><img src="{{ url_for('static', filename='images/nutri-smooth.svg') }}"
-                    width="250" alt="nutri-smooth logo"></a>
+            <a href="#!" class="brand-logo"><img src="{{ url_for('static', filename='images/logo-3.svg') }}"
+                    width="350" alt="nutri-smooth logo"></a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons red-text text-lighten-2">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a class="red-text text-lighten-2" href="{{ url_for('get_recipes') }}">Home</a></li>
@@ -40,7 +40,7 @@
 
     <!-- Mobile SideNav-->
     <ul class="sidenav orange lighten-5" id="mobile-demo">
-        <li><a href="#!" class="brand-logo"><img src="{{ url_for('static', filename='images/nutri-smooth.svg') }}"
+        <li><a href="#!" class="brand-logo"><img src="{{ url_for('static', filename='images/logo-3.svg') }}"
                     width="250" class="brand-logo" alt="nutri-smooth logo"></a></li>
         <li><a class="red-text text-lighten-2" href="{{ url_for('get_recipes') }}">Home</a></li>
         {% if session.user %}
@@ -62,7 +62,7 @@
             {% if messages %}
                 {% for message in messages %}
                     <div class="row flashes">
-                        <h4 class="red lighten-2 center-align orange-text text-lighten-5">{{ message }}</h4>
+                        <h4 class="center-align red-text text-lighten-2">{{ message }}</h4>
                     </div>
                 {% endfor %}
             {% endif %}
@@ -70,17 +70,18 @@
     </section>
 
 
-    <main class="container">
+    <main class="container content-container">
         {% block content %}
         {% endblock %}
     </main>
 
+    <!-- Footer -->
     <footer class="page-footer">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <a href="#!" class="brand-logo"><img src="{{ url_for('static', filename='images/nutri-smooth.svg') }}"
-                    width="250" alt="nutri-smooth logo" class="orange lighten-5"></a>
+                    <a href="#!" class="brand-logo"><img src="{{ url_for('static', filename='images/logo-footer.svg') }}"
+                    width="275" alt="nutri-smooth logo" class="orange lighten-5"></a>
                     <h5 class="orange-text text-lighten-5">For smoothie lovers...<i class="material-icons orange-text text-lighten-5">favorite</i></h5>
                     <p class="orange-text text-lighten-5">Nutri-Smooth is your online recipe book for saving and sharing all of your favourite smoothie recipes and their nurtitional benefits!
                     </p>
@@ -106,9 +107,9 @@
         <div class="footer-copyright">
             <div class="container orange-text text-lighten-5">
                 © 2021 Roxanne Boulden
-                <a class="right social-icon" target="_blank" href="#!"><img src="{{ url_for('static', filename='images/facebook.svg') }}" alt="facebook icon"></a>
-                <a class="right social-icon" target="_blank" href="#!"><img src="{{ url_for('static', filename='images/instagram.svg') }}" alt="instagram icon"></a>
-                <a class="right social-icon" target="_blank" href="#!"><img src="{{ url_for('static', filename='images/pinterest.svg') }}" alt="pinterest icon"></a>
+                <a class="right social-icon" target="_blank" href="https://www.facebook.com/"><img src="{{ url_for('static', filename='images/facebook.svg') }}" alt="facebook icon"></a>
+                <a class="right social-icon" target="_blank" href="https://www.instagram.com/"><img src="{{ url_for('static', filename='images/instagram.svg') }}" alt="instagram icon"></a>
+                <a class="right social-icon" target="_blank" href="https://www.pinterest.com/"><img src="{{ url_for('static', filename='images/pinterest.svg') }}" alt="pinterest icon"></a>
             </div>
         </div>
     </footer>

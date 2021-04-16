@@ -2,18 +2,36 @@
 font-family: 'Quicksand', sans-serif;
 font-family: 'Raleway', sans-serif; 
 font-family: 'Crimson Pro', serif;
+background-color:#ffccbc;#b2dfdb;
 */
 
-/* ----------------------------------- Body */
+/* ----------------------------------- Body (and sticky-footer) */
 
 body {
-    background-color:#ffccbc;
+    background-color: #85b4be88;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.content-container {
+    margin-top: 45px;
+    margin-bottom: 40px;
+}
+
+main {
+    flex: 1 0 auto;
 }
 
 /* ----------------------------------- Navbar */
 
 nav {
     box-shadow: none;
+}
+
+nav .nav-wrapper {
+    height: 85px;
+    line-height: 85px;
 }
 
 nav ul a {
@@ -95,7 +113,7 @@ button {
     height: 70px;
 }
 
-/* ----------------------------------- Delete Modal */
+/* ----------------------------------- Footer */
 
 .social-icon { 
     width: 20px;

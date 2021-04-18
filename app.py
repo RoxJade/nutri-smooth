@@ -19,17 +19,17 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+@app.route("/index")
+def index():
+    """Function returns home page"""
+    return render_template("index.html")
+
+
 @app.route("/get_recipes")
 def get_recipes():
     """Iterates through recipe data in MongoDB and returns recipes.html"""
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes)
-
-
-@app.route("/index")
-def index():
-    """Function returns home page"""
-    return render_template("index.html")
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -97,7 +97,7 @@ def signin():
                 return redirect(url_for("signin"))
 
         else:
-            flash("Incorrect Username and or/Password")
+            flash("Incorrect Username and/or Password")
             return redirect(url_for("signin"))
 
     return render_template("signin.html")
@@ -111,7 +111,10 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        own_recipes = list(mongo.db.recipes.find(
+            {"created_by": session["user"]}))
+        return render_template(
+            "profile.html", username=username, own_recipes=own_recipes)
 
     return redirect(url_for("signin"))
 
@@ -127,7 +130,7 @@ def logout():
 def add_smoothie():
     """
     Function to allow a registered user to insert a new smoothie
-    recipe onto the site and pulls the data through to MongoDB,
+    recipe onto the site and posts the data to MongoDB,
     then redirects the user back to the get_recipes function.
     """
     if request.method == "POST":

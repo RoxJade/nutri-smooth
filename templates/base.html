@@ -22,7 +22,8 @@
                     width="350" alt="nutri-smooth logo"></a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons red-text text-lighten-2">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a class="red-text text-lighten-2" href="{{ url_for('get_recipes') }}">Home</a></li>
+                <li><a class="red-text text-lighten-2" href="{{ url_for('index') }}">Home</a></li>
+                <li><a class="red-text text-lighten-2" href="{{ url_for('get_recipes') }}">Smoothies</a></li>
                 {% if session.user %}
                     <li><a class="red-text text-lighten-2" href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                     <li><a class="red-text text-lighten-2" href="{{ url_for('add_smoothie') }}">Add Smoothie</a></li>
@@ -42,7 +43,8 @@
     <ul class="sidenav orange lighten-5" id="mobile-demo">
         <li><a href="#!" class="brand-logo"><img src="{{ url_for('static', filename='images/logo-3.svg') }}"
                     width="250" class="brand-logo" alt="nutri-smooth logo"></a></li>
-        <li><a class="red-text text-lighten-2" href="{{ url_for('get_recipes') }}">Home</a></li>
+        <li><a class="red-text text-lighten-2" href="{{ url_for('index') }}">Home</a></li>
+        <li><a class="red-text text-lighten-2" href="{{ url_for('get_recipes') }}">Smoothies</a></li>
         {% if session.user %}
             <li><a class="red-text text-lighten-2" href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
             <li><a class="red-text text-lighten-2" href="{{ url_for('add_smoothie') }}">Add Smoothie</a></li>
@@ -88,7 +90,8 @@
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <ul>
-                        <li><a class="orange-text text-lighten-5" href="{{ url_for('get_recipes') }}"><h5>Home</h5></a></li>
+                        <li><a class="red-text text-lighten-2" href="{{ url_for('index') }}">Home</a></li>
+                        <li><a class="orange-text text-lighten-5" href="{{ url_for('get_recipes') }}"><h5>Smoothies</h5></a></li>
                         {% if session.user %}
                         <li><a class="orange-text text-lighten-5" href="{{ url_for('profile', username=session['user']) }}"><h5>Profile</h5></a></li>
                         <li><a class="orange-text text-lighten-5" href="{{ url_for('add_smoothie') }}"><h5>Add Smoothie</h5></a></li>

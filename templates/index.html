@@ -25,7 +25,7 @@
                     <img src="{{ url_for('static', filename='images/smoothie-apple.jpg') }}" alt="smoothie image">
                 </div>
                 <div class="card-content">
-                    <h5>All Smoothie's</h5>
+                    <h5><a class="red-text text-lighten-2" href="{{ url_for('get_recipes') }}">Smoothie's</a></h5>
                     <p>Create any smoothie from a variety of recipes added by the community. Find all <a class="red-text text-lighten-2" href="{{ url_for('get_recipes') }}">smoothie</a> recipe's here!</p>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                     <img src="{{ url_for('static', filename='images/smoothie-strawberry.jpg') }}" alt="smoothie image">
                 </div>
                 <div class="card-content">
-                    <h5>Sign In</h5>
+                    <h5><a class="red-text text-lighten-2" href="{{ url_for('signin') }}">Sign In</a></h5>
                     <p><a class="red-text text-lighten-2" href="{{ url_for('signin') }}">Sign in</a> to your profile to view your smoothies and add more recipes!</p>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                     <img src="{{ url_for('static', filename='images/recipe-book.jpg') }}" alt="smoothie image">
                 </div>
                 <div class="card-content">
-                    <h5>All Smoothies</h5>
+                    <h5><a class="red-text text-lighten-2" href="{{ url_for('register') }}"> Register</a></h5>
                     <p>Keep an organised online recipe book for all of your favourite smoothie recipes!<a class="red-text text-lighten-2" href="{{ url_for('register') }}"> Register</a> here to
                         sign up for your own profile.</p>
                 </div>

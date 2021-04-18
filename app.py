@@ -111,8 +111,11 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        own_recipes = list(mongo.db.recipes.find(
-            {"created_by": session["user"]}))
+        if session["user"] == "admin":
+            own_recipes = list(mongo.db.recipes.find())
+        else:
+            own_recipes = list(mongo.db.recipes.find(
+                {"created_by": session["user"]}))
         return render_template(
             "profile.html", username=username, own_recipes=own_recipes)
 

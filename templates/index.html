@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content%}
+    <!-- Parallax -->
     <div class="parallax-container">
         <div class="parallax"><img src="{{ url_for('static', filename='images/smoothie-background.jpg') }}" width="400">
         </div>
@@ -15,4 +16,43 @@
         <div class="parallax"><img src="{{ url_for('static', filename='images/smoothie-background-4.jpg') }}" width="400">
         </div>
     </div>
+    <br>
+    <!-- Card -->
+    <div class="row">
+        <div class="col s4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{ url_for('static', filename='images/smoothie-apple.jpg') }}" alt="smoothie image">
+                </div>
+                <div class="card-content">
+                    <h5>All Smoothie's</h5>
+                    <p>Create any smoothie from a variety of recipes added by the community. Find all <a class="red-text text-lighten-2" href="{{ url_for('get_recipes') }}">smoothie</a> recipe's here!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col s4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{ url_for('static', filename='images/smoothie-strawberry.jpg') }}" alt="smoothie image">
+                </div>
+                <div class="card-content">
+                    <h5>Sign In</h5>
+                    <p><a class="red-text text-lighten-2" href="{{ url_for('signin') }}">Sign in</a> to your profile to view your smoothies and add more recipes!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col s4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{ url_for('static', filename='images/recipe-book.jpg') }}" alt="smoothie image">
+                </div>
+                <div class="card-content">
+                    <h5>All Smoothies</h5>
+                    <p>Keep an organised online recipe book for all of your favourite smoothie recipes!<a class="red-text text-lighten-2" href="{{ url_for('register') }}"> Register</a> here to
+                        sign up for your own profile.</p>
+                </div>
+            </div>
+        </div> 
+    </div>
+    
 {% endblock %}

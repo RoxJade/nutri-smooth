@@ -45,6 +45,10 @@ nav ul a {
     font-size: 18px;
 }
 
+nav i.person-icon {
+    display: inline;
+}
+
 /* ----------------------------------- Headers and Paragraphs */
 
 h1, h2, h3, h4, h5, h6 {

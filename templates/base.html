@@ -32,8 +32,8 @@
                     {% endif %}
                     <li><a class="red-text text-lighten-2" href="{{ url_for('logout') }}">Log Out</a></li>
                 {% else %}
-                    <li><a class="red-text text-lighten-2" href="{{ url_for('signin') }}">Sign In</a></li>
                     <li><a class="red-text text-lighten-2" href="{{ url_for('register') }}">Register</a></li>
+                    <li><a class="red-text text-lighten-2 tooltipped" data-position="bottom" data-tooltip="Sign In" href="{{ url_for('signin') }}"><i class="material-icons red-text text-lighten-2 person-icon">person</i></a></li>
                 {% endif %}
             </ul>
         </div>
@@ -90,7 +90,7 @@
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <ul>
-                        <li><a class="red-text text-lighten-2" href="{{ url_for('index') }}">Home</a></li>
+                        <li><a class="orange-text text-lighten-5" href="{{ url_for('index') }}"><h5>Home</h5></a></li>
                         <li><a class="orange-text text-lighten-5" href="{{ url_for('get_recipes') }}"><h5>Smoothies</h5></a></li>
                         {% if session.user %}
                         <li><a class="orange-text text-lighten-5" href="{{ url_for('profile', username=session['user']) }}"><h5>Profile</h5></a></li>

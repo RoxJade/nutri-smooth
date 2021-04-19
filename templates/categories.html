@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-
+<main class="container content-container">
     <h3 class="red-text text-lighten-2 center-align">Manage Categories</h3>
     <div class="row">
         <div class="col s12 center-align">
@@ -11,7 +11,7 @@
     <div class="row">
         {% for category in categories %}
             <div class="col s12 m3">
-                <div class="card center-align orange lighten-5">
+                <div class="card category-card center-align orange lighten-5">
                     <div class="card-content red-text text-lighten-2">
                         <h5 class="card-title"><strong>{{ category.category_name }}</strong></h5>
                     </div>
@@ -42,5 +42,5 @@
             </div>
         {% endfor %}
     </div>
-
+</main>
 {% endblock %}

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-
+<main class="container content-container">
 <div class="row">
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('signin') }}">
         <div class="card-panel orange lighten-5">
@@ -42,5 +42,5 @@
         </p>
     </div>
 </div>
-
+</main>
 {% endblock %}

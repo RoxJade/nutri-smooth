@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
+
+    <main class="container content-container">
+
     <div class="row search-bar card-panel orange lighten-5">
         <form action="{{ url_for('search') }}" method="POST" class="col s12">
             <div class="row valign-wrapper center-align">
@@ -83,4 +86,5 @@
     {% else %}
         <h3 class="red-text text-lighten-2 center-align">No results found</h3>
     {% endif %}
+    </main>
 {% endblock %}

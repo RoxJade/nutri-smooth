@@ -17,6 +17,7 @@ body {
 .content-container {
     margin-top: 45px;
     margin-bottom: 40px;
+    width: 80%;
 }
 
 main {
@@ -103,6 +104,10 @@ button {
 .collapsible-body {
     font-family: 'Crimson Pro', serif;
     font-size: medium;
+}
+
+.category-card {
+    height: 200px;
 }
 
 /* ----------------------------------- Delete Modal */

@@ -17,9 +17,9 @@
 <body>
     <!-- Navbar -->          
     <nav class="orange lighten-5">
-        <div class="nav-wrapper orange lighten-5">
-            <a href="#!" class="brand-logo"><img src="{{ url_for('static', filename='images/logo-3.svg') }}"
-                    width="350" alt="nutri-smooth logo"></a>
+        <div class="nav-wrapper orange lighten-5"> 
+            <a href="{{ url_for('index') }}" class="brand-logo"><img src="{{ url_for('static', filename='images/logo-3.svg') }}"
+                    width="325" alt="nutri-smooth logo"></a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons red-text text-lighten-2">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a class="red-text text-lighten-2" href="{{ url_for('index') }}">Home</a></li>
@@ -71,11 +71,8 @@
         {% endwith %}
     </section>
 
-
-    <!--<main class="container content-container">-->
-        {% block content %}
-        {% endblock %}
-    <!--</main>-->
+    {% block content %}
+    {% endblock %}
 
     <!-- Footer -->
     <footer class="page-footer">

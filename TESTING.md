@@ -112,6 +112,13 @@ I used the code validators below and Lighthouse (Chrome Dev Tools):
 - [Javascript Beautify Tools Validator](https://beautifytools.com/javascript-validator.php)
 - [HTML W3 Validator](https://validator.w3.org/)
 - [CSS W3 Validator](http://www.css-validator.org/)
+- [PEP8 validator](http://pep8online.com/checkresult)
+
+## PEP8 Online Python Validator:
+
+After completing all python functionality for my site, I updated the docstrings and ran my code through the [PEP8 validator](http://pep8online.com/checkresult). This found no syntax errors.
+<br>
+<img alt=validator-python.png src="testing-images/validator-python.png" width=60%>
 
 ## HTML Validator:
 

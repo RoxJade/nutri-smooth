@@ -18,7 +18,7 @@
     <!-- Navbar -->          
     <nav class="orange lighten-5">
         <div class="nav-wrapper orange lighten-5"> 
-            <a href="{{ url_for('index') }}" class="brand-logo"><img src="{{ url_for('static', filename='images/logo-3.svg') }}"
+            <a href="{{ url_for('index') }}" class="brand-logo"><img class="logo" src="{{ url_for('static', filename='images/logo-3.svg') }}"
                     width="325" alt="nutri-smooth logo"></a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons red-text text-lighten-2">menu</i></a>
             <ul class="right hide-on-med-and-down">
@@ -41,8 +41,8 @@
 
     <!-- Mobile SideNav-->
     <ul class="sidenav orange lighten-5" id="mobile-demo">
-        <li><a href="#!" class="brand-logo"><img src="{{ url_for('static', filename='images/logo-3.svg') }}"
-                    width="250" class="brand-logo" alt="nutri-smooth logo"></a></li>
+        <li><a href="{{ url_for('index') }}" class="brand-logo"><img class="logo" src="{{ url_for('static', filename='images/logo-3.svg') }}"
+                    width="250" alt="nutri-smooth logo"></a></li>
         <li><a class="red-text text-lighten-2" href="{{ url_for('index') }}">Home</a></li>
         <li><a class="red-text text-lighten-2" href="{{ url_for('get_recipes') }}">Smoothies</a></li>
         {% if session.user %}
@@ -79,7 +79,7 @@
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <a href="#!" class="brand-logo"><img src="{{ url_for('static', filename='images/footer-logo.svg') }}"
+                    <a href="#!" class="brand-logo"><img class="logo" src="{{ url_for('static', filename='images/footer-logo.svg') }}"
                     width="300" alt="nutri-smooth logo"></a>
                     <h5 class="orange-text text-lighten-5">For smoothie lovers...<i class="material-icons orange-text text-lighten-5">favorite</i></h5>
                     <p class="orange-text text-lighten-5">Nutri-Smooth is your online recipe book for saving and sharing all of your favourite smoothie recipes and their nurtitional benefits!

@@ -134,3 +134,24 @@ button {
 .parallax-paragraph {
     font-size: 18px;
 }
+
+  .parallax-container {
+      height: 450px;
+    }
+
+/* ----------------------------------- Media Queries */
+
+@media only screen and (max-width: 600px) {
+    
+    .logo {
+        width: 240px;
+    }
+
+    .content-container {
+        width: 90%;
+    }
+
+
+    
+
+}

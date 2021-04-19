@@ -34,16 +34,17 @@ def get_recipes():
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    """Function to search Mongo database using index, returns search for
+    any 'text' existing in category name, recipe name and recipe ingredients"""
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     return render_template("recipes.html", recipes=recipes)
 
 
-# Register and check for existing username #
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """
-    Iterates though user data collection to check for exisiting
+    Iterates though user data to check for exisiting
     username in MongoDB, if found it returns user to register.html
     with flash notification.
     """
@@ -56,7 +57,7 @@ def register():
             return redirect(url_for("register"))
 
         """
-        Inserts requested data into MongoDB and uses a hash
+        Inserts requested user data into MongoDB and uses a hash
         method on user password when storing.
         """
         register = {
@@ -69,8 +70,10 @@ def register():
             }
         mongo.db.users.insert_one(register)
 
-        """Stores user's registration in session cookies and directs
-        the user to their profile"""
+        """
+        Stores user's registration in session cookies and directs
+        the user to their profile.
+        """
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
@@ -78,9 +81,12 @@ def register():
     return render_template("register.html")
 
 
-# Sign in, checks for existing username, incorrect username/password #
 @app.route("/signin", methods=["GET", "POST"])
 def signin():
+    """
+    Search database for user data to sign in, checks for incorrect name or
+    password and redirects user to their profile.
+    """
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
@@ -103,13 +109,16 @@ def signin():
     return render_template("signin.html")
 
 
-# User Profile #
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    """returns user profile page @param username"""
+    """Returns user profile page @param username"""
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
+    """
+    Returns all recipes to admin profile and returns recipes
+    created by user to user profile.
+    """
     if session["user"]:
         if session["user"] == "admin":
             own_recipes = list(mongo.db.recipes.find())
@@ -124,6 +133,9 @@ def profile(username):
 
 @app.route("/logout")
 def logout():
+    """
+    Remove user session cookies for user to log out.
+    """
     flash("You have been successfully logged out")
     session.pop("user")
     return redirect(url_for("signin"))
@@ -132,9 +144,9 @@ def logout():
 @app.route("/add_smoothie", methods=["GET", "POST"])
 def add_smoothie():
     """
-    Function to allow a registered user to insert a new smoothie
-    recipe onto the site and posts the data to MongoDB,
-    then redirects the user back to the get_recipes function.
+    Allow registered user to post new smoothie
+    data on site and database, then redirects
+    user back to the smoothies page.
     """
     if request.method == "POST":
         is_favourite = "on" if request.form.get(
@@ -154,7 +166,8 @@ def add_smoothie():
         return redirect(url_for("get_recipes"))
 
     """
-    Get categories from MongoDB to pull through into category dropdown options
+    Get categories from MongoDB to appear in categories dropdown selection
+    on 'add_smoothie' page.
     """
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_smoothie.html", categories=categories)
@@ -163,9 +176,8 @@ def add_smoothie():
 @app.route("/edit_smoothie/<recipe_id>", methods=["GET", "POST"])
 def edit_smoothie(recipe_id):
     """
-    Function to allow a registered user to edit and save edited
-    recipe onto the site and pulls the data through to MongoDB,
-    then redirects the user back to the edit_smoothie page.
+    Allow registered user to target their added recipes for editing,
+    using recipe object_id, save edit on site and post to database.
     """
     if request.method == "POST":
         is_favourite = "on" if request.form.get(
@@ -185,8 +197,8 @@ def edit_smoothie(recipe_id):
         flash("Your smoothie recipe has been updated!")
 
     """
-    Target the individual recipe selected by user for
-    editing using the Object Id in MongoDB
+    Target individual recipe selected by user for
+    editing using the Object Id in MongoDB.
     """
     recipe = mongo.db.recipes.find_one(
         {"_id": ObjectId(recipe_id)})
@@ -198,8 +210,8 @@ def edit_smoothie(recipe_id):
 @app.route("/delete_smoothie/<recipe_id>")
 def delete_smoothie(recipe_id):
     """
-    Function to delete an individual smoothie recipe from site and
-    MongoBD limited to that user's uploaded recipes.
+    Delete an individual smoothie recipe from site and
+    MongoDB targeting user's recipe Object_Id.
     """
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Smoothie recipe deleted")
@@ -209,7 +221,8 @@ def delete_smoothie(recipe_id):
 @app.route("/get_categories")
 def get_categories():
     """
-    Get list of categories from MongoDB and sort them alphabetically.
+    Get list of categories from MongoDB and sort alphabetically.
+    Return list to categories page.
     """
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
@@ -218,8 +231,8 @@ def get_categories():
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
     """
-    Function to add a new smoothie category to the site
-    and MongoDB, restricted only to the admin user.
+    Add new smoothie category to site and MongoDB,
+    restricted to admin user only.
     """
     if request.method == "POST":
         category = {
@@ -235,9 +248,9 @@ def add_category():
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     """
-    Function to allow an admin user to edit and save new smoothie categories
-    onto the site and pulls the data through to MongoDB, then redirects
-    the user back to the edit_smoothie page.
+    Allow admin user to edit and save smoothie categories, using
+    Object_Id, on site and post to database, then redirect
+    to 'edit_category' page.
     """
     if request.method == "POST":
         submit = {
@@ -255,9 +268,9 @@ def edit_category(category_id):
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
     """
-    Function to allow an admin user to delete a chosen smoothie category
-    on the site and MongoDB, then redirects the user back to
-    the categories page.
+    Allow admin user to delete a chosen smoothie category
+    targeting Object_Id, on site and database, then redirect
+    the user back to the categories page.
     """
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Smoothie category deleted")

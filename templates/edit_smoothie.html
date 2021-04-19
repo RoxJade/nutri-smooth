@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <main class="container content-container">
-    <h3 class="red-text text-lighten-2 center-align">Edit smoothie recipe</h3>
+    <h4 class="red-text text-lighten-2 center-align">Edit smoothie recipe</h4>
 
     <div class="row card-panel grey lighten-4">
         <form class="col s12" method="POST" action="{{ url_for('edit_smoothie', recipe_id=recipe._id) }}">
@@ -74,7 +74,7 @@
                     <i class="material-icons prefix red-text text-lighten-2">image_search</i>
                     <input id="image_url" name="image_url" value="{{ recipe.image_url }}" type="url" pattern="https?://.+"
                         class="validate cyan-text text-darken-2" required>
-                    <label for="image_url">Add a photo via a url image link!</label>
+                    <label for="image_url">Add an image link address</label>
                     <span class="helper-text" data-error="Please enter valid URL" data-success="great!">Enter valid URL (*please be
                         mindful not to add copyright imagery)</span>
                 </div>
@@ -91,7 +91,7 @@
                                 <input type="checkbox" id="is_favourite" name="is_favourite">
                             {% endif %}
                             <span class="lever"></span>
-                            Is this one of the most <strong class="cyan-text text-darken-2">awesome</strong> smoothie's you've tried?
+                            Is this an <strong class="cyan-text text-darken-2">awesome</strong> smoothie?
                         </label>
                     </div>
                 </div>
@@ -100,11 +100,11 @@
             <div class="row">
                 <div class="col s12 center-align">
                     <button class="btn waves-effect waves-light red lighten-2 center-align" type="submit">Save changes
-                        <i class="material-icons right">save</i>
+                        <i class="material-icons right hide-on-small-only">save</i>
             <!-- Cancel Edit Smoothie -->
                     </button>
-                    <a href="{{ url_for('get_recipes') }}" class="btn-floating btn tooltipped waves-effect waves-light cyan-text text-darken-2 right" data-position="right"
-                                data-tooltip="Cancel edit?"><i class="material-icons">cancel</i></a>
+                    <a href="{{ url_for('get_recipes') }}" class="btn-floating btn-small tooltipped waves-effect waves-light cyan-text text-darken-2 right" data-position="right"
+                                data-tooltip="Cancel edit?"><i class="material-icons">close</i></a>
                 </div>
             </div>
         </form>

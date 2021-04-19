@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <main class="container content-container">
-    <h3 class="red-text text-lighten-2 center-align">Manage Categories</h3>
+    <h4 class="red-text text-lighten-2 center-align">Manage Categories</h4>
     <div class="row">
         <div class="col s12 center-align">
             <a href="{{ url_for('add_category') }}" class="waves-effect waves-light btn red lighten-2 center-align"><i class="material-icons right">add</i>Add a new category?</a>
@@ -27,8 +27,8 @@
                         </a>
                         <div id="modal{{ url_for('delete_category', category_id=category._id) }}" class="modal">
                             <div class="modal-content">
-                                <h5 class="red-text text-lighten-3 center-align delete-header">Are you sure you want to delete
-                                    {{ category.category_name }}?</h5>
+                                <h4 class="red-text text-lighten-3 center-align delete-header">Are you sure you want to delete
+                                    {{ category.category_name }}?</h4>
                             </div>
                             <div class="modal-footer center-align">
                                 <a href="{{ url_for('delete_category', category_id=category._id) }}"

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <main class="container content-container">
-    <h3 class="red-text text-lighten-2 center-align">Add your smoothie recipe!</h3>
+    <h4 class="red-text text-lighten-2 center-align">Add your smoothie recipe!</h4>
 
     <div class="row card-panel grey lighten-4">
         <form class="col s12" method="POST" action="{{ url_for('add_smoothie') }}">
@@ -63,7 +63,7 @@
                 <div class="input-field col s12">
                     <i class="material-icons prefix red-text text-lighten-2">image_search</i>
                     <input id="image_url" name="image_url" type="url" pattern="https?://.+" class="validate cyan-text text-darken-2" required>
-                    <label for="image_url">Add a photo via a url image link!</label>
+                    <label for="image_url">Add an image link address</label>
                     <span class="helper-text" data-error="Please enter valid URL" data-success="great!">Enter valid URL (*please be mindful not to add copyright imagery)</span>
                 </div>
             </div>
@@ -75,20 +75,31 @@
                         <label for="is_favourite">
                             <input type="checkbox" id="is_favourite" name="is_favourite">
                             <span class="lever"></span>
-                            Is this one of the most <strong class="cyan-text text-darken-2">awesome</strong> smoothie's you've tried?
+                            Is this an <strong class="cyan-text text-darken-2">awesome</strong> smoothie?
                         </label>
                     </div>
                 </div>
             </div>
-            <!-- Submit Smoothie -->
-            <div class="row">
+            <!-- Submit Smoothie tablet and desktop -->
+            <div class="row show-on-medium-and-up hide-on-small-only">
                 <div class="col s12 center-align">
                     <button class="btn waves-effect waves-light red lighten-2 center-align" type="submit">Submit my awesome smoothie!
                         <i class="material-icons right">send</i>
                     </button>
-            <!-- Cancel Add Smoothie -->
+            <!-- Cancel Add Smoothie tablet and desktop -->
                     <a href="{{ url_for('get_recipes') }}" class="btn-floating btn tooltipped waves-effect waves-light cyan-text text-darken-2 right" data-position="right"
-                                data-tooltip="Cancel"><i class="material-icons">cancel</i></a>
+                                data-tooltip="Cancel"><i class="material-icons">close</i></a>
+                </div>
+            </div>                
+            <!-- Submit Smoothie mobile -->
+            <div class="row show-on-small-only hide-on-med-and-up">
+                <div class="col s12 center-align">
+                    <button class="btn waves-effect waves-light red lighten-2 center-align" type="submit">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+            <!-- Cancel Add Smoothie mobile -->
+                    <a href="{{ url_for('get_recipes') }}" class="btn-floating btn tooltipped waves-effect waves-light cyan-text text-darken-2 right" data-position="right"
+                                data-tooltip="Cancel"><i class="material-icons">close</i></a>
                 </div>
             </div>
         </form>

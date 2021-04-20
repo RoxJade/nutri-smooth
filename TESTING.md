@@ -127,8 +127,9 @@ After completing all python functionality for my site, I updated the docstrings 
 ## Javascript Validator:
 
 ## Lighthouse:
+Below I have outlined a selection of issues suggested by Lighthouse:
 
-### Accessibility Issues (a selection): 
+### Accessibility: 
 - "Background and foreground colours do not have a sufficient contrast ratio." 
 Lighthouse suggested two of the main colours in my colour palette (Materilialize orange lighten-5 and red lighten-2) are too low in contrast. I decided not change this as I deliberately chose calm pastel tones relevant to the site design and to appeal to the audience.
 <br>
@@ -136,6 +137,16 @@ Lighthouse suggested two of the main colours in my colour palette (Materilialize
 
 - "Image elements do not have [alt] attributes."
 Lighthouse picked up on images lacking 'alt' attributes. I then added these where necessary.
+
+### Best Practices
+- "Links to cross-origin destinations are unsafe."
+Lighthouse suggested the three social links in the footer are unsafe and rel="referrer" or rel="noopener" should be added to improve security. I added rel="referrer" attribute to each social link.
+
+- "Document does not have a meta description."
+Lighthouse suggested to include meta data about the site to improve SEO. I added these in the <head> of the base.html template.
+
+
+
 
 
 

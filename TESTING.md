@@ -109,22 +109,44 @@ User Stories can be found in [The README.md UX](insert readme.md)
 ## Automated Testing
 
 I used the code validators below and Lighthouse (Chrome Dev Tools):
-- [Javascript - JS Hint](https://)
+- [Javascript - JS Hint](https://jshint.com/)
 - [HTML W3 Validator](https://validator.w3.org/)
 - [CSS W3 Validator](http://www.css-validator.org/)
 - [PEP8 validator](http://pep8online.com/checkresult)
 
 ## PEP8 Online Python Validator:
 
-After completing all python functionality for my site, I updated the docstrings and ran my code through the [PEP8 validator](http://pep8online.com/checkresult). This found no syntax errors.
+After completing all python functionality for my site, I updated the docstrings and ran my code through the [PEP8 validator](http://pep8online.com/checkresult). This found no errors.
 <br>
 <img alt=validator-python.png src="testing-images/validator-python.png" width=60%>
 
 ## HTML Validator:
+To validate the HTML, I used [HTML W3 Validator](https://validator.w3.org/).
+
+**Every page had the same recurring warning:** "Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections." I have ignored this on every page check as I do require a header element on any of these sections.
+
+- **index.html** (home page): No warnings or errors.
+- **recipes.html** (smoothies page): 1 error - "Duplicate ID query, line 90." I am ignoring this as the id="query" is repeated because they are applicable for different screen sizes/media queries and will not get used simultaneously. I tested the search functionality to make sure this wouldn't be an issue and it was fine. 
+- **profile.html** (user profile page): No warnings or errors.
+- **add_smoothie.html** (add smoothie page): No warnings or errors.
+- **edit_smoothie.html** (edit smoothie page): No warnings or errors.
+- **categories.html** (manage categories page): No warnings or errors.
+- **register.html** (registration page): No warnings or errors. 
+- **signin.html** (user sign in page): No warnings or errors. 
+- **add_category.html** (add category page): 1 error - "Bad value for attribute name on element button: Must not be empty, line 85." I removed this rogue empty name attribute from the add_category.html as it wasn't necessary.
+- **edit_category.html** (edit category page): No warnings or errors. 
 
 ## CSS Validator:
+To validate the CSS, I used [CSS W3](http://www.css-validator.org/). No errors were found.
+<br>
+<img alt=validator-css.png src="testing-images/validator-css.png" width=60%>
+
 
 ## Javascript Validator:
+To validate the JQuery code, I used [JS Hint](https://jshint.com/).
+This picked up two warnings of the keyword use of 'Let'. I ignored these as this part of the JQuery code was taken from Code Institute.
+<br>
+<img alt=validator-jquery.png src="testing-images/validator-jquery.png" width=60%>
 
 ## Lighthouse:
 Below I have outlined a selection of issues suggested by Lighthouse:
@@ -138,12 +160,20 @@ Lighthouse suggested two of the main colours in my colour palette (Materilialize
 - "Image elements do not have [alt] attributes."
 Lighthouse picked up on images lacking 'alt' attributes. I then added these where necessary.
 
-### Best Practices
+### Best Practices:
 - "Links to cross-origin destinations are unsafe."
 Lighthouse suggested the three social links in the footer are unsafe and rel="referrer" or rel="noopener" should be added to improve security. I added rel="referrer" attribute to each social link.
 
 - "Document does not have a meta description."
 Lighthouse suggested to include meta data about the site to improve SEO. I added these in the <head> of the base.html template.
+
+Once I had addressed some of the suggestions from Lighthouse, I generated the Lighthouse report again, see before and after results:
+<br>
+<img alt=lighthouse-before.png src="testing-images/lighthouse-before.png" width=30%>
+<img alt=lighthouse-after.png src="testing-images/lighthouse-after.png" width=30%>
+
+
+
 
 
 

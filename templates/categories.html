@@ -1,15 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-<main class="container content-container">
-    <h4 class="red-text text-lighten-2 center-align">Manage Categories</h4>
-    <div class="row">
-        <div class="col s12 center-align">
-            <a href="{{ url_for('add_category') }}" class="waves-effect waves-light btn red lighten-2 center-align"><i class="material-icons right">add</i>Add a new category?</a>
+    <main class="container content-container">
+        <h4 class="red-text text-lighten-2 center-align">Manage Categories</h4>
+        <!--Add new category -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <a href="{{ url_for('add_category') }}" class="waves-effect waves-light btn red lighten-2 center-align">
+                    <i class="material-icons right">add</i>Add a new category?</a>
+            </div>
         </div>
-    </div>
-
-    <div class="row">
-        {% for category in categories %}
+        <!-- Category card -->
+        <div class="row">
+            {% for category in categories %}
             <div class="col s12 m3">
                 <div class="card category-card center-align orange lighten-5">
                     <div class="card-content red-text text-lighten-2">
@@ -17,30 +19,30 @@
                     </div>
                     <div class="card-action">
                         <a href="{{ url_for('edit_category', category_id=category._id) }}"
-                            class="btn-floating btn-small tooltipped waves-effect waves-light red lighten-2" data-position="left"
-                            data-tooltip="Edit category?"><i class="material-icons">edit</i>
+                            class="btn-floating btn-small tooltipped waves-effect waves-light red lighten-2"
+                            data-position="left" data-tooltip="Edit category?"><i class="material-icons">edit</i>
                         </a>
                         <a href="#modal{{ url_for('delete_category', category_id=category._id) }}"
-                            class="btn-floating btn-small modal-trigger tooltipped waves-effect waves-light cyan darken-2" data-position="right"
-                            data-tooltip="Delete category?" data-target="modal{{ url_for('delete_category', category_id=category._id) }}"><i
-                                class="material-icons">delete</i>
+                            class="btn-floating btn-small modal-trigger tooltipped waves-effect waves-light cyan darken-2"
+                            data-position="right" data-tooltip="Delete category?"
+                            data-target="modal{{ url_for('delete_category', category_id=category._id) }}"><i class="material-icons">delete</i>
                         </a>
+                        <!-- delete modal -->
                         <div id="modal{{ url_for('delete_category', category_id=category._id) }}" class="modal">
                             <div class="modal-content">
-                                <h4 class="red-text text-lighten-3 center-align delete-header">Are you sure you want to delete
-                                    {{ category.category_name }}?</h4>
+                                <h4 class="red-text text-lighten-3 center-align delete-header">Are you sure you want to delete {{ category.category_name }}?</h4>
                             </div>
                             <div class="modal-footer center-align">
                                 <a href="{{ url_for('delete_category', category_id=category._id) }}"
                                     class="modal-close waves-effect btn-small">Delete</a>
-                                <a href="#" class="modal-close waves-effect btn-floating btn-small right red lighten-2"><i
-                                    class="material-icons">close</i></a>
+                                <a href="#" class="modal-close waves-effect btn-floating btn-small right red lighten-2">
+                                    <i class="material-icons">close</i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        {% endfor %}
-    </div>
-</main>
+            {% endfor %}
+        </div>
+    </main>
 {% endblock %}

@@ -58,8 +58,8 @@
         {% endif %}
     </ul>
 
+    <!-- Flash Messages -->
     <section>
-        <!-- Flash Messages -->
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
@@ -71,6 +71,7 @@
         {% endwith %}
     </section>
 
+    <!-- Main Content -->
     {% block content %}
     {% endblock %}
 
@@ -79,7 +80,7 @@
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <a href="#!" class="brand-logo"><img class="logo" src="{{ url_for('static', filename='images/footer-logo.svg') }}"
+                    <a href="{{ url_for('index') }}" class="brand-logo"><img class="logo" src="{{ url_for('static', filename='images/footer-logo.svg') }}"
                     width="300" alt="nutri-smooth logo"></a>
                     <h5 class="orange-text text-lighten-5">For smoothie lovers...<i class="material-icons orange-text text-lighten-5">favorite</i></h5>
                     <p class="orange-text text-lighten-5">Nutri-Smooth is your online recipe book for saving and sharing all of your favourite smoothie recipes and their nurtitional benefits!

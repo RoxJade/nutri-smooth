@@ -2,58 +2,59 @@
 {% block content%}
     <!-- Parallax -->
     <div class="parallax-container">
-        <div class="parallax"><img src="{{ url_for('static', filename='images/smoothie-background.jpg') }}">
-        </div>
+        <div class="parallax"><img src="{{ url_for('static', filename='images/smoothie-background.jpg') }}"></div>
     </div>
     <div class="section orange lighten-5">
         <div class="row container">
             <h3 class="red-text text-lighten-2 header">For smoothie lovers...<i class="material-icons red-text text-lighten-2">favorite</i></h3>
-            <p class="parallax-paragraph red-text text-lighten-2">Nutri-Smooth is your online recipe book for saving and sharing all of your favourite smoothie recipes and their nurtitional benefits!
-            </p>
+            <p class="parallax-paragraph red-text text-lighten-2">Nutri-Smooth is your online recipe book for saving and sharing all of your favourite smoothie recipes and their nurtitional benefits!</p>
         </div>
     </div>
     <div class="parallax-container">
-        <div class="parallax"><img src="{{ url_for('static', filename='images/smoothie-background-4.jpg') }}">
-        </div>
+        <div class="parallax"><img src="{{ url_for('static', filename='images/smoothie-background-4.jpg') }}"></div>
     </div>
     <br>
     <!-- Home Cards -->
     <main class="container content-container">
-    <div class="row">
-        <div class="col s12 l4">
-            <div class="card hoverable">
-                <div class="card-image">
-                    <img src="{{ url_for('static', filename='images/smoothie-apple.jpg') }}" alt="smoothie image">
+        <div class="row">
+            <div class="col s12 l4">
+                <div class="card hoverable">
+                    <div class="card-image">
+                        <img src="{{ url_for('static', filename='images/smoothie-apple.jpg') }}" alt="smoothie image">
+                    </div>
+                    <div class="card-content">
+                        <h5><a class="red-text text-lighten-2" href="{{ url_for('get_recipes') }}">Smoothie's</a></h5>
+                        <p>Create any smoothie from a variety of recipes added by the community. 
+                            Find all <a class="red-text text-lighten-2" href="{{ url_for('get_recipes') }}">smoothie</a> recipe's here!
+                        </p>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <h5><a class="red-text text-lighten-2" href="{{ url_for('get_recipes') }}">Smoothie's</a></h5>
-                    <p>Create any smoothie from a variety of recipes added by the community. Find all <a class="red-text text-lighten-2" href="{{ url_for('get_recipes') }}">smoothie</a> recipe's here!</p>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card hoverable">
+                    <div class="card-image">
+                        <img src="{{ url_for('static', filename='images/smoothie-strawberry.jpg') }}" alt="smoothie image">
+                    </div>
+                    <div class="card-content">
+                        <h5><a class="red-text text-lighten-2" href="{{ url_for('signin') }}">Sign In</a></h5>
+                        <p><a class="red-text text-lighten-2" href="{{ url_for('signin') }}">Sign in</a> to your profile to view
+                            your smoothies and add more recipes!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card hoverable">
+                    <div class="card-image">
+                        <img src="{{ url_for('static', filename='images/recipe-book.jpg') }}" alt="smoothie image">
+                    </div>
+                    <div class="card-content">
+                        <h5><a class="red-text text-lighten-2" href="{{ url_for('register') }}"> Register</a></h5>
+                        <p>Keep an organised online recipe book for all of your favourite smoothie recipes!<a
+                            class="red-text text-lighten-2" href="{{ url_for('register') }}"> Register</a> here to
+                            sign up for your own profile.</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col s12 m6 l4">
-            <div class="card hoverable">
-                <div class="card-image">
-                    <img src="{{ url_for('static', filename='images/smoothie-strawberry.jpg') }}" alt="smoothie image">
-                </div>
-                <div class="card-content">
-                    <h5><a class="red-text text-lighten-2" href="{{ url_for('signin') }}">Sign In</a></h5>
-                    <p><a class="red-text text-lighten-2" href="{{ url_for('signin') }}">Sign in</a> to your profile to view your smoothies and add more recipes!</p>
-                </div>
-            </div>
-        </div>
-        <div class="col s12 m6 l4">
-            <div class="card hoverable">
-                <div class="card-image">
-                    <img src="{{ url_for('static', filename='images/recipe-book.jpg') }}" alt="smoothie image">
-                </div>
-                <div class="card-content">
-                    <h5><a class="red-text text-lighten-2" href="{{ url_for('register') }}"> Register</a></h5>
-                    <p>Keep an organised online recipe book for all of your favourite smoothie recipes!<a class="red-text text-lighten-2" href="{{ url_for('register') }}"> Register</a> here to
-                        sign up for your own profile.</p>
-                </div>
-            </div>
-        </div> 
-    </div>
     </main>
 {% endblock %}

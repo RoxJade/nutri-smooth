@@ -1,67 +1,70 @@
 {% extends "base.html" %}
 {% block content %}
-<main class="container content-container">
-<div class="row">
-    <form class="col s12 m10 offset-m1" method="POST" action="{{ url_for('register') }}">
-        <div class="card-panel orange lighten-5">
-            <h4 class="center-align cyan-text text-darken-2">Register to add your smoothie recipes!</h4>
-            <!-- First Name, Last Name -->
-            <div class="row">
-                <div class="input-field col s12 m6">
-                    <input id="firstname" name="firstname" type="text" minlength="1" 
-                    maxlength="20" pattern="^[a-zA-Z0-9]{1,20}$" class="validate" required>
-                    <label for="firstname">First Name</label>
+    <main class="container content-container">
+        <!-- Registration form -->
+        <div class="row">
+            <form class="col s12 m10 offset-m1" method="POST" action="{{ url_for('register') }}">
+                <div class="card-panel orange lighten-5">
+                    <h4 class="center-align cyan-text text-darken-2">Register to add your smoothie recipes!</h4>
+                    <!-- First Name, Last Name -->
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input id="firstname" name="firstname" type="text" minlength="1" maxlength="20"
+                                pattern="^[a-zA-Z0-9]{1,20}$" class="validate" required>
+                            <label for="firstname">First Name</label>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <input id="lastname" name="lastname" type="text" minlength="1" maxlength="20"
+                                pattern="^[a-zA-Z0-9]{1,20}$" class="validate" required>
+                            <label for="lastname">Last Name</label>
+                        </div>
+                    </div>
+                    <!-- Email -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix red-text text-lighten-2">email</i>
+                            <input id="email" name="email" type="email" class="validate" required>
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <!-- Username -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix red-text text-lighten-2">account_circle</i>
+                            <input id="username" name="username" type="text" minlength="5" maxlength="15"
+                                pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                            <label for="username">Username</label>
+                            <span class="helper-text" data-error="wrong" data-success="right">5-15 characters, only letters
+                                and numbers</span>
+                        </div>
+                    </div>
+                    <!-- Password -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix red-text text-lighten-2">lock</i>
+                            <input id="password" name="password" type="password" minlength="5" maxlength="15"
+                                pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                            <label for="password">Password</label>
+                            <span class="helper-text" data-error="wrong" data-success="right">5-15 characters, only letters
+                                and numbers</span>
+                        </div>
+                    </div>
+                    <!-- Submit Button -->
+                    <div class="row">
+                        <button type="submit" class="col s12 m6 offset-m3 waves-effect btn-large red lighten-2">
+                            Register <i class="material-icons prefix red-text text-lighten-2"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="input-field col s12 m6">
-                    <input id="lastname" name="lastname" type="text" minlength="1" 
-                    maxlength="20" pattern="^[a-zA-Z0-9]{1,20}$" class="validate" required>
-                    <label for="lastname">Last Name</label>
-                </div>
-            </div>
-            <!-- Email -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix red-text text-lighten-2">email</i>
-                    <input id="email" name="email" type="email" class="validate" required>
-                    <label for="email">Email</label>
-                </div>
-            </div>
-            <!-- Username -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix red-text text-lighten-2">account_circle</i>
-                    <input id="username" name="username" type="text" minlength="5" maxlength="15" 
-                    pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                    <label for="username">Username</label>
-                    <span class="helper-text" data-error="wrong" data-success="right">5-15 characters, only letters and numbers</span>
-                </div>
-            </div>
-            <!-- Password -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix red-text text-lighten-2">lock</i>
-                    <input id="password" name="password" type="password" minlength="5" 
-                    maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                    <label for="password">Password</label>
-                    <span class="helper-text" data-error="wrong" data-success="right">5-15 characters, only letters and numbers</span>
-                </div>
-            </div>
-            <!-- Submit Button -->
-            <div class="row">
-                <button type="submit" class="col s12 m6 offset-m3 waves-effect btn-large red lighten-2">
-                    Register <i class="material-icons prefix red-text text-lighten-2"></i>
-                </button>
+            </form>
+        </div>
+        <!-- Sign in link -->
+        <div class="row">
+            <div class="col s12">
+                <p class="center-align grey-text text-darken-1">
+                    Already Registered? <a href="{{ url_for('signin') }}" class="red-text text-lighten-1">Sign In</a>
+                </p>
             </div>
         </div>
-    </form>
-</div>  
-
-<div class="row">
-    <div class="col s12">
-        <p class="center-align grey-text text-darken-1">
-            Already Registered? <a href="{{ url_for('signin') }}" class="red-text text-lighten-1">Sign In</a>
-        </p>
-    </div>
-</div>
-</main>
+    </main>
 {% endblock %}

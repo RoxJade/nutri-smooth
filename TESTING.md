@@ -7,7 +7,7 @@
 1. [Development and Problem Solving](#development-and-Problem-Solving)
 2. [Testing for User Stories](#Testing-for-User-Stories)
 3. [Responsiveness](#Responsiveness)
-4. [Code Validators and Lighthouse](#Code-Validators-and-Lighthouse)
+4. [Automated Testing](#Automated-Testing)
 5. [Deployment](#Deployment)
 6. [Browser Tests](#Browser-Tests)
 
@@ -106,10 +106,10 @@ User Stories can be found in [The README.md UX](insert readme.md)
 
 # Responsiveness
 
-## Code Validators and Lighthouse
+## Automated Testing
 
 I used the code validators below and Lighthouse (Chrome Dev Tools):
-- [Javascript Beautify Tools Validator](https://beautifytools.com/javascript-validator.php)
+- [Javascript - JS Hint](https://)
 - [HTML W3 Validator](https://validator.w3.org/)
 - [CSS W3 Validator](http://www.css-validator.org/)
 - [PEP8 validator](http://pep8online.com/checkresult)
@@ -127,6 +127,12 @@ After completing all python functionality for my site, I updated the docstrings 
 ## Javascript Validator:
 
 ## Lighthouse:
+
+### Accessibility Issues: 
+- "Background and foreground colours do not have a sufficient contrast ratio." 
+Lighthouse suggested two of the main colours in my colour palette (Materilialize orange lighten-5 and red lighten-2) are too low in contrast. I decided not change this as I deliberately chose calm pastel tones relevant to the site design and to appeal to the audience.
+<br>
+<img alt=lighthouse-colour.png src="testing-images/lighthouse-colour.png" width=30%>
 
 # Deployment 
 

@@ -128,11 +128,16 @@ After completing all python functionality for my site, I updated the docstrings 
 
 ## Lighthouse:
 
-### Accessibility Issues: 
+### Accessibility Issues (a selection): 
 - "Background and foreground colours do not have a sufficient contrast ratio." 
 Lighthouse suggested two of the main colours in my colour palette (Materilialize orange lighten-5 and red lighten-2) are too low in contrast. I decided not change this as I deliberately chose calm pastel tones relevant to the site design and to appeal to the audience.
 <br>
 <img alt=lighthouse-colour.png src="testing-images/lighthouse-colour.png" width=30%>
+
+- "Image elements do not have [alt] attributes."
+Lighthouse picked up on images lacking 'alt' attributes. I then added these where necessary.
+
+
 
 # Deployment 
 

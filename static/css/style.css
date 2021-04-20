@@ -17,7 +17,7 @@ body {
 .content-container {
     margin-top: 45px;
     margin-bottom: 40px;
-    width: 80%;
+    width: 85%;
 }
 
 main {
@@ -119,6 +119,10 @@ button {
     margin: 0;
 }
 
+.card .card-content {
+      padding: 30px;
+    }
+
 /* ----------------------------------- Delete Modal */
 
 .delete-header {
@@ -167,8 +171,28 @@ button {
     nav .nav-wrapper {
     height: 70px;
     line-height: 70px;
+    }
+
+    .parallax-container {
+      height: 300px;
+    }
+
 }
 
-    
+@media only screen and (min-width: 992px) {
+        
+    .logo {
+        width: 400px;
+    }
 
+    nav .nav-wrapper {
+    height: 100px;
+    line-height: 100px;
+    }
+
+    .parallax-container {
+      height: 600px;
+    }
+
+}
 }

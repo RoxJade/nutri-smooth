@@ -109,7 +109,7 @@ User Stories can be found in [The README.md UX](https://github.com/RoxJade/nutri
     - Forms on the 'add smoothie' page are self-explanatory with icons and helper text to guide the user.
     - Forms on the 'add smoothie' page have validation colour/messages to confirm the user's added information correctly.
     
-2. As a user I want to be able to read through my own smoothie recipes and others to gain inspiration and create them.
+2. As a user I want to be able to read through my own smoothie recipes, share them with the community and read recipes added by others to gain inspiration and recreate them.
     - In the main navbar, I can access the 'smoothies' page to read through all of the smoothies added by others, including my own.
     - In the main navbar, I can access my own profile to read through all smoothie recipes I've added.
     - Appealing images accompanying the smoothie recipes can be seen by the user for instant inspiration.

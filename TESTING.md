@@ -131,18 +131,23 @@ User Stories can be found in [The README.md UX](https://github.com/RoxJade/nutri
  
 7. As a user, I want the design of the site to be aesthetically appealing with clear navigation and a sense of calm and colour.
     - The site uses a colour palette reminiscent of 'blended smoothie', using colourful pastel's. The colour palette is limited to a small variety for a clearer user experience.
-    - The site is easy to navigate around with a clear links in the navbar, repeated at the top and bottom of all pages. Many pages contain signposted links to another relevant page.
+    - The site is easy to navigate around with clear links in the navbar, repeated at the top and bottom of all pages. Many pages contain signposted links to another relevant page including three links at the bottom of the index page on the 3 feature cards.
 
 8. As a user I would like to know the breakdown of the nutrition or health benefits in the recipes so I can make informed, healthy choices.
     - User can add the nutritional values or health benefits to their smoothie recipe entries.
     - Users can find the nutritional and health benefits of the recipes on the smoothies page. There is a collapsible accordian, ready for the user to click on.
     - Users can access the search function, using keywords relating to the healthy ingredients they desire.
     - Helpful smoothie categories help to indicate possible health and nutritional benefits.
+
 9. As a returning user, I would like to access all of my added smoothies on my own personal profile.
     - All smoothie recipes added by the user are saved on their personal account profile, ready for the users return.
+
 10. As a user, I want the option to add minimal information to my smoothie recipes if I wish.
     - As shown in the helper text on the 'add smoothie' form, users do not need to enter sentences, in most cases, single words can be enough.
+
 11. As a user, I want the option to add lots of information and imagery to my smoothie recipes if I wish.
+    - On the add_smoothie page, users have the opportunity to add macro-nutrient information, health benefits and image links.
+    
 12. As a simple recipe book, I would like the site to be easy and quick to navigate around.
     - Flash messages appear upon submition of any edits/additions/deletions/signin/registration/searches throughout the site to reassure the user, their action was successful.
 13. As a user, I want the site to be responsive, especially for mobile and tablet as I will probably be creating smoothie recipes from a mobile device in the kitchen.

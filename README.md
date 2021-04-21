@@ -25,14 +25,19 @@ Testing and Deployment can be found in a separate file:
 
 ## User stories
 
-1. As a user, I want to be able to perfom CRUD (create, read, update and delete) operations on the site.
-2. As a user, I want the ability to log into my own profile in order to add, edit and delete my recipes.
-3. As a user, I would like to be able to search for smoothie recipes.
-4. As a user, I want to be able to mark my favourite recipes and access these quickly. *** This is EXTRA!! IF I HAVE ENOUGH TIME! ***
-5. As a user, I want the design of the site to be aesthetically appealing with clear navigation.
-6. As a user I would like to have a variety of different types of smoothie recipes to search through.
-7. As a user I would like to read through current recipes for inspiration.
-8. As a user I would like to know the breakdown of the nutrition in the recipes so I can make informed, healthy choices. 
+1. As a user I want to be able to add and store my own smoothie recipes.
+2. As a user I want to be able to read through my own smoothie recipes and others to gain inspiration and create them.
+3. As a user I may wish to change a recipe or update it's ingredients.
+4. As a user, I may wish to delete recipes I am no longer like.
+5. As a user, I would like to be able to search for different smoothie recipes or ingredients for inspiration.
+6. As a user, I want to be able to mark my favourite recipes and access these quickly. *** This is EXTRA!! IF I HAVE ENOUGH TIME! ***
+7. As a user, I want the design of the site to be aesthetically appealing with clear navigation and a sense of calm and colour.
+8. As a user I would like to know the breakdown of the nutrition or health benefits in the recipes so I can make informed, healthy choices.
+9. As a returning user, I would like to access all of my added smoothies on my own personal profile.
+10. As a user, I want the option to add minimal information to my smoothie recipes if I wish.
+11. As a user, I want the option to add lots of information and imagery to my smoothie recipes if I wish.
+12. As a simple recipe book, I would like the site to be easy and quick to navigate around. 
+13. As a user, I want the site to be responsive, especially for mobile and tablet as I will probably be creating smoothie recipes from a mobile device in the kitchen.
 
 ## Scope
 (Insert Scope blurb)

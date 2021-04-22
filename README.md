@@ -99,7 +99,6 @@ Below is a selection of wireframe designs for desktop, mobile and tablet. All pa
 # Features
 
 <img alt=responsive-1.png src="testing-images/responsive-1.png" width=50%>
-<br>
 
 ## Home/Index page
 The main home page to grab the attention of the user and draw them in with about paragraph and links to register/sign up/see all smoothies.
@@ -129,7 +128,6 @@ The main home page to grab the attention of the user and draw them in with about
 
 <br>
 <img alt=responsive-2.png src="testing-images/responsive-2.png" width=50%>
-<br>
 
 ## Smoothies page
 The smoothie recipe page to enable all visitors to see smoothie recipes added by community and a search-smoothie function.
@@ -148,7 +146,6 @@ The smoothie recipe page to enable all visitors to see smoothie recipes added by
 
 <br>
 <img alt=responsive-3.png src="testing-images/responsive-3.png" width=50%>
-<br>
 
 ## Sign In / Register pages
 The register and sign-in pages are similar, they both similar forms and request user information relevant to the user signing in or registering a new account.
@@ -173,7 +170,6 @@ User profile page is similar to 'Smoothies' page, it will show all recipe cards 
 
 <br>
 <img alt=responsive-4.png src="testing-images/responsive-4.png" width=50%>
-<br>
 
 ## Add Smoothie and Edit Smoothie pages
 Add Smoothie and Edit Smoothie pages show the same form for the user to add/edit a smoothie. *Registered users can only edit their own smoothie recipes.
@@ -195,7 +191,6 @@ Add Smoothie and Edit Smoothie pages show the same form for the user to add/edit
 
 <br>
 <img alt=responsive-5.png src="testing-images/responsive-5.png" width=50%>
-<br>
 
 ## Manage Categories page
 The 'Manage Categories' link will appear exclusively for the signed-in admin user and allows the admin user to add, edit and delete smoothie categories. 
@@ -209,7 +204,6 @@ The 'Manage Categories' link will appear exclusively for the signed-in admin use
 
 <br>
 <img alt=responsive-6.png src="testing-images/responsive-6.png" width=50%>
-<br>
 
 ## Add and Edit Category pages
 - Add category form:
@@ -228,48 +222,51 @@ The 'Manage Categories' link will appear exclusively for the signed-in admin use
 
 ## Additional considerations and features to implement in the future
 
-1. Adding a private profile feature
-2. Adding a 'suggested search' function or recommendenations based on user preferences
-    - Increase interactivity by Add a star rating / likes counter and community engagement by requesting mini-smoothie reviews from users trying out shared smoothie recipes.
-    - Turn the admin user into a 'superuser' by using the database
-    - Give detailed instructions on how to add images url's for users who may not know how to do this
+**To increase user experience:**
+    - Increase interactivity by adding a star rating / likes counter system for registered users to be able to rate smoothie recipes.
+    - Encourage more community engagement by requesting mini-smoothie reviews from users trying out shared smoothie recipes.
+    - Turn the admin user account into a 'superuser' by adding 'superuser' data to the database to allow more than one registered admin user to manage the site.
+    - Expand admin user privileges to enable deletetion of any added smoothie.
+    - Create a pop up modal or Materlialize 'feature discovery' giving clear instructions to the user on how to add image url's within the 'add smoothie' page, for users who may not know how to do this.
 
 # Technologies Used
 
-- [Adobe Illustrator](https://www.adobe.com/uk/products/illustrator.html) Used the deisgn and mockups.
-- [Gitpod and Github](https://github.com/RoxJade/) All code and files created in Gitpod, repository in Github.
-- [Heroku](https://www.heroku.com/home)Site deployed on Heroku.
-- [MongoDB]() Document oriented database used to store data
-- Flask()
-- HTML
-- CSS
-- [JQuery]().
-- [Google fonts]() . 
-- [Font Awesome](https://fontawesome.com/) Used to add the 'star' icons for the rating system.
-- [Weukzeug]() Used to add security to user passwords and debug code whlst in production.
+- [Gitpod and Github](https://github.com/RoxJade/) for version control.
+- [Heroku](https://www.heroku.com/home) Site is deployed on Heroku platform.
+- [MongoDB](https://www.mongodb.com/) Document oriented database used to all of my data collections.
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/) Flask web development framework.
+- [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/) Used to add security to user passwords and debug code whlst in production.
+- [Jinja Templating](https://jinja.palletsprojects.com/en/2.11.x/) Python templating language used.
+- [Materialize](https://materializecss.com/) Frontend library used to style the site.
+- [JQuery](https://jquery.com/) Javascript functionality to work with Materlialize.
+- HTML.
+- CSS.
+- [Google fonts](https://fonts.google.com/) and [Google icons](https://fonts.google.com/icons). 
+- [Adobe Illustrator](https://www.adobe.com/uk/products/illustrator.html) Used for the logo design and mockups.
 
 # Credits
 ## Content
-The design of the site was created by myself, including logo design.
-A list of the resources are below:
-
-## Javascript resources and research
-- [Code Institute - Back End Development Module]()
+[Code Institute](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DCP101+2017_T3/courseware/9e2f12f5584e48acb3c29e9b0d7cc4fe/054c3813e82e4195b5a4d8cd8a99ebaa/) - I used the Task-Manager mini-project tutorials to start and guide the project.
+The design of the site was created by myself and influenced by Materialize.
 
 ## Additional resources and research
+- Code Institute Mentor tutorials
 - [Stack Overflow](https://stackoverflow.com/)
 - [W3 Schools](https://www.w3schools.com/)
 - [CDNJS](https://cdnjs.com/)
 - [Slack](https://app.slack.com/)
+- [CodeGrepper](https://www.codegrepper.com/code-examples/python/flask+url_for+external)
+- [The NetNinja Materialize Tutorial series on You Tube](https://www.youtube.com/watch?v=gCZ3y6mQpW0&list=PL4cUxeGkcC9gGrbtvASEZSlFEYBnPkmff)
+- [Codemy.com You Tube video - Using static files with flask](https://www.youtube.com/watch?v=O5m6lNy3w-g)How to insert images.
 
 ## Media
-
+All images added are from Unsplash and are copyright free.
 - [Unsplash](https://unsplash.com/)
 
 ## Acknowledgements
 I received inspiration for ideas, colour palette and design of this project from: 
 - [My Protein](https://www.myprotein.com/)
-- []()
-- []()
-- [](https://dribbble.com/shots/6492236-Balosto?utm_source=Pinterest_Shot&utm_campaign=Podavalkin&utm_content=Balosto&utm_medium=Social_Share)
-[pinterest](https://pinterest.com), [current website trends](https://99designs.co.uk/blog/trends/web-design-trends/) and [dribbble](https://dribbble.com/shots/6492236-Balosto?utm_source=Pinterest_Shot&utm_campaign=Podavalkin&utm_content=Balosto&utm_medium=Social_Share).
+- [pinterest](https://pinterest.com)
+- [current website trends](https://99designs.co.uk/blog/trends/web-design-trends/)
+- [dribbble](https://dribbble.com/shots/6492236-Balosto?utm_source=Pinterest_Shot&utm_campaign=Podavalkin&utm_content=Balosto&utm_medium=Social_Share).
+- [Nutritional Advice](https://www.nutritionadvance.com/healthy-foods/types-of-fruit/#tab-con-29)

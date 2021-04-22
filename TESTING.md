@@ -278,7 +278,9 @@ Below is a detailed review of the full functionality of the site and the manual 
     - Search validation - turns red if less than 3 characters are entered and helper-text appears. Turns green when 3 or more characters are entered. Works as expected.
 - **Smoothie recipe cards:**
     - Hover over shadow occurs for each card. Works as expected.
-    - Card info displays: Image/alt message should appear, smoothie title, smoothie category, ingredients and user created by information. Works as expected.
+    - Card info displays: Image/alt message should appear, smoothie title, smoothie category, ingredients and user created by information. Works as expected **if user adds an image**
+        - **Image Bug** Note, that if user submits a new smoothie and chooses not add an image link, this causes the card title to sit above the card and doesn't look good. In futuure, this is somthing I need to fix. I'm limited for time now, but when I have the chance, possible solutions could be: 
+    To create an 'if condition' on the recipe page, if users do not include an image, it adds an alternative stockholder-smoothie image in it's place.
     - Hover over heart icon causes tooltip indication of 'favourite' (if user has chosen to 'favourite' the recipe when adding).  Works as expected.
     - Collapsible accordian expands to reveal macro information and health benefits on each card. Works as expected, **however**, once expanded, it intrudes on the space below, causing a large gap between the next card, unless all cards on that row have been expanded.
     - Edit/delete (plus/bin icons) appear with tooltip indicating 'Edit?'/'Delete' if the recipe belongs to that user (at bottom of card). On click, they take you to the relevant links. Works as expected.
@@ -312,6 +314,7 @@ Below is a detailed review of the full functionality of the site and the manual 
 - **Form**
     - Form fields validate correct user entry - green indication/'great' helper text appears when user has added information within the set parameters. Works as expected.
     - Form fields validate incorrect user entry - red indication/'wrong' helper text appears when user has not met required parameters when entering information. Works as expected.
+    - Adding an image url on the form is not 'required' if user does not want to add one.
     - Indication text for required parameters occurs beneath each field. Works as expected.
     - Category dropdown selection reveals category selection. Works as expected.
     - Switch toggle changes colour upon click. Works as expected.

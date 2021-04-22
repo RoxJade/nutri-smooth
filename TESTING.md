@@ -18,6 +18,7 @@ I started the project by creating a repository in GitHub and used the Gitpod IDE
 To deploy the Nutri-smooth web application, I used Heroku. Here is a step-by-step account of the process:
 
 Before the deployment process, I created a new collection on MongoDB with three sub-collections to store user data, smoothie recipe data and smoothie category data.
+
 <br>
 <img alt=mongo-db.png src="testing-images/mongo-db.png" width=80%>
 
@@ -35,7 +36,6 @@ There were no issues or problems during the heroku deployment process.
 
 A selection of some of the tests I ran, bugs and problem solving during development. 
 
-****
 **Test setup - MongoDB connection to Gitpod**
 - The first test I ran at the start of the project was to check the data I had entered when setting up MongoDB was being pulled across successfully from the Mongo database. 
 I checked this using a Jinja for loop to iterate through the 'recipe' data. This was successful. 
@@ -85,10 +85,7 @@ After completing the registration form, I duplicated it to create the Sign-in pa
 I added functionality for this page, including some defensive programming, checking for existing users and checking for incorrect username and/or password fields. 
 I then tested all of the links for this, entered invalid user data and correct sign in data. All of these tests were successful.
 
-<img alt=signin-functionality.png src="testing-images/signin-functionality.png" width=55%>
-<br>
-<img alt=signin-incorrect.png src="testing-images/signin-incorrect.png" width=35%>
-<img alt=signin-success.png src="testing-images/signin-success.png" width=34%>
+<img alt=signin-functionality.png src="testing-images/signin-functionality.png" width=55%><img alt=signin-incorrect.png src="testing-images/signin-incorrect.png" width=35%>
 
 ****
 **Mentor Tutorial Advice - Change Python comments into Docstrings**
@@ -256,7 +253,9 @@ Lighthouse suggested to include meta data about the site to improve SEO. I added
 
 Once I had addressed some of the suggestions from Lighthouse, I generated the Lighthouse report again, see before and after results:
 <br>
+
 **Before and After**
+
 <img alt=lighthouse-before.png src="testing-images/lighthouse-before.png" width=45%>
 <img alt=lighthouse-after.png src="testing-images/lighthouse-after.png" width=45%>
 

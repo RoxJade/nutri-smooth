@@ -60,7 +60,7 @@ Target Audeience/User Profile
 
 In MongoDB, I will create a 3 collections to capture and contain **user data, smoothie recipe data and smoothie category data**. Below is a an outline of how the data will be structured and where it links together. 
 <br>
-<img alt=data-structure.png src="testing-images/data-structure.png" width=70%>
+<img alt=data-structure.png src="testing-images/data-structure.png" width=80%>
 <br>
 
 **Site structure**
@@ -78,7 +78,7 @@ I was inspired by the impact of a 'parallax' feature and the 'comfortable colour
 **Colour Theme**
 I developed a calm colour theme, inspired by a web-trend article and blended-smoothie colours. I decided to use colours mainly from the Materialize colour sets for ease of design and consistency throughout the site.
 <br>
-<img alt=colour-palette.png src="testing-images/colour-palette.png" width=50%>
+<img alt=colour-palette.png src="testing-images/colour-palette.png" width=30%>
 <br>
 
 **Logo Development**
@@ -91,14 +91,14 @@ I initially designed a basic logo on Adobe Illustrator and saved as an SVG file 
 # Wireframes and Mockups
 Below is a selection of wireframe designs for desktop, mobile and tablet. All pages primarily with forms will not be altered dramatically for different screen sizes unless necessary. The main pages that will display differently include the index page and the smoothie recipe page.
 <br>
-<img alt=wire-1.png src="testing-images/wire-1.png" width=50%>
-<img alt=wire-2.png src="testing-images/wire-2.png" width=50%>
-<img alt=wire-3.png src="testing-images/wire-3.png" width=50%>
-<img alt=wire-4.png src="testing-images/wire-4.png" width=50%>
+<img alt=wire-1.png src="testing-images/wire-1.png" width=60%>
+<img alt=wire-2.png src="testing-images/wire-2.png" width=60%>
+<img alt=wire-3.png src="testing-images/wire-3.png" width=60%>
+<img alt=wire-4.png src="testing-images/wire-4.png" width=60%>
 
 # Features
 
-<img alt=responsive-1.png src="testing-images/responsive-1.png" width=50%>
+<img alt=responsive-1.png src="testing-images/responsive-1.png" width=70%>
 
 ## Home/Index page
 The main home page to grab the attention of the user and draw them in with about paragraph and links to register/sign up/see all smoothies.
@@ -127,7 +127,7 @@ The main home page to grab the attention of the user and draw them in with about
     - A copyright logo and author name is also present.
 
 <br>
-<img alt=responsive-2.png src="testing-images/responsive-2.png" width=50%>
+<img alt=responsive-2.png src="testing-images/responsive-2.png" width=70%>
 
 ## Smoothies page
 The smoothie recipe page to enable all visitors to see smoothie recipes added by community and a search-smoothie function.
@@ -145,7 +145,7 @@ The smoothie recipe page to enable all visitors to see smoothie recipes added by
     - Delete icon causes pop-up modal questioning deletion upon user click. Modal delete button deletes smoothie. Modal cancel icon returns user to 'smoothies' page.
 
 <br>
-<img alt=responsive-3.png src="testing-images/responsive-3.png" width=50%>
+<img alt=responsive-3.png src="testing-images/responsive-3.png" width=70%>
 
 ## Sign In / Register pages
 The register and sign-in pages are similar, they both similar forms and request user information relevant to the user signing in or registering a new account.
@@ -169,7 +169,7 @@ User profile page is similar to 'Smoothies' page, it will show all recipe cards 
 - Modal cancel icon returns user to 'smoothies' page.
 
 <br>
-<img alt=responsive-4.png src="testing-images/responsive-4.png" width=50%>
+<img alt=responsive-4.png src="testing-images/responsive-4.png" width=70%>
 
 ## Add Smoothie and Edit Smoothie pages
 Add Smoothie and Edit Smoothie pages show the same form for the user to add/edit a smoothie. *Registered users can only edit their own smoothie recipes.
@@ -190,7 +190,7 @@ Add Smoothie and Edit Smoothie pages show the same form for the user to add/edit
     - Cancel icon shows tooltip 'cancel edit?' when hovered over and returns user to smoothies page.
 
 <br>
-<img alt=responsive-5.png src="testing-images/responsive-5.png" width=50%>
+<img alt=responsive-5.png src="testing-images/responsive-5.png" width=70%>
 
 ## Manage Categories page
 The 'Manage Categories' link will appear exclusively for the signed-in admin user and allows the admin user to add, edit and delete smoothie categories. 
@@ -203,7 +203,7 @@ The 'Manage Categories' link will appear exclusively for the signed-in admin use
 - Edit category takes user to 'edit category' page.
 
 <br>
-<img alt=responsive-6.png src="testing-images/responsive-6.png" width=50%>
+<img alt=responsive-6.png src="testing-images/responsive-6.png" width=70%>
 
 ## Add and Edit Category pages
 - Add category form:
@@ -223,11 +223,11 @@ The 'Manage Categories' link will appear exclusively for the signed-in admin use
 ## Additional considerations and features to implement in the future
 
 **To increase user experience:**
-    - Increase interactivity by adding a star rating / likes counter system for registered users to be able to rate smoothie recipes.
-    - Encourage more community engagement by requesting mini-smoothie reviews from users trying out shared smoothie recipes.
-    - Turn the admin user account into a 'superuser' by adding 'superuser' data to the database to allow more than one registered admin user to manage the site.
-    - Expand admin user privileges to enable deletetion of any added smoothie.
-    - Create a pop up modal or Materlialize 'feature discovery' giving clear instructions to the user on how to add image url's within the 'add smoothie' page, for users who may not know how to do this.
+- Increase interactivity by adding a star rating / likes counter system for registered users to be able to rate smoothie recipes.
+- Encourage more community engagement by requesting mini-smoothie reviews from users trying out shared smoothie recipes.
+- Turn the admin user account into a 'superuser' by adding 'superuser' data to the database to allow more than one registered admin user to manage the site.
+- Expand admin user privileges to enable deletetion of any added smoothie.
+- Create a pop up modal or Materlialize 'feature discovery' giving clear instructions to the user on how to add image url's within the 'add smoothie' page, for users who may not know how to do this.
 
 # Technologies Used
 
@@ -257,7 +257,7 @@ The design of the site was created by myself and influenced by Materialize.
 - [Slack](https://app.slack.com/)
 - [CodeGrepper](https://www.codegrepper.com/code-examples/python/flask+url_for+external)
 - [The NetNinja Materialize Tutorial series on You Tube](https://www.youtube.com/watch?v=gCZ3y6mQpW0&list=PL4cUxeGkcC9gGrbtvASEZSlFEYBnPkmff)
-- [Codemy.com You Tube video - Using static files with flask](https://www.youtube.com/watch?v=O5m6lNy3w-g)How to insert images.
+- [Codemy.com You Tube video - Using static files with flask](https://www.youtube.com/watch?v=O5m6lNy3w-g): Showed me how to insert images.
 
 ## Media
 All images added are from Unsplash and are copyright free.

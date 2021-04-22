@@ -4,30 +4,58 @@
 
 # Contents
 
-1. [Development and Problem Solving and Bugs](#development-and-Problem-Solving-and-Bugs)
-2. [Testing for User Stories](#Testing-for-User-Stories)
-3. [Responsive Testing](#Responsive-Testing)
-4. [Automated Testing](#Automated-Testing)
-5. [Deployment](#Deployment)
+1. [Deployment](#Deployment)
+2. [Development and Problem Solving and Bugs](#development-and-Problem-Solving-and-Bugs)
+3. [Testing for User Stories](#Testing-for-User-Stories)
+4. [Responsive Testing](#Responsive-Testing)
+5. [Automated Testing](#Automated-Testing)
 6. [Browser Tests](#Browser-Tests)
 7. [Manual Testing](#Manual-Testing)
 
+# Deployment 
+
+I started the project by creating a repository in GitHub and used the Gitpod IDE to write the code. I deployed the app to Heroku at the start of production.
+To deploy the Nutri-smooth web application, I used Heroku. Here is a step-by-step account of the process:
+
+Before the deployment process, I created a new collection on MongoDB with three sub-collections to store user data, smoothie recipe data and smoothie category data.
+<br>
+<img alt=mongo-db.png src="testing-images/mongo-db.png" width=80%>
+
+1. I started by creating a requirements.txt to list all apps and dependencies required to run the site. 
+2. In the Gitpod terminal I used the command 'echo web: python app.py > Procfile' to create a Procfile for Heroku to to read the app.py file.
+3. I logged into Heroku and created a new app, calling it 'nutri-smooth' to match the GitHub repository and the title/logo of the site.
+4. I chose automatic deployment from my GitHub repository, specifying the 'nutri-smooth' repo-name.
+5. Once found, I connected it to my app. 
+6. Before enabling the automatic deployment, I entered the configuration variables (hidden from Heroku inside the env.py file). This included the IP address, port, the secret key (generated using randomkeygenerator.com) a link to MongoDB and the 'nutri_smooth' database. 
+7. Before deploying the site, I went back to Gitpod and committed the Procfile and requirements.txt.
+8. Going back to Heroku, I enabled the automatic deployment and deploy branch. Heroku then built the app and successfully deployed it.
+There were no issues or problems during the heroku deployment process. 
+
 # Development, Problem Solving and Bugs
 
-The first test I ran at the start of the project was to check the data I had entered when setting up MongoDB was being pulled across successfully from the Mongo database. 
+A selection of some of the tests I ran, bugs and problem solving during development. 
+
+****
+**Test setup - MongoDB connection to Gitpod**
+- The first test I ran at the start of the project was to check the data I had entered when setting up MongoDB was being pulled across successfully from the Mongo database. 
 I checked this using a Jinja for loop to iterate through the 'recipe' data. This was successful. 
 
-<img alt=data-test-app.png src="testing-images/data-test-app.png" width=25%>
+<img alt=data-test-app.png src="testing-images/data-test-app.png" width=30%>
 <img alt=data-test-html.png src="testing-images/data-test-html.png" width=30%>
 <img alt=data-test.png src="testing-images/data-test.png" width=35%>
+
+****
+**Test setup - CSS/Script files working**
 
 After adding Materialize and the static CSS/Script files, I added a background template to style.css to test the files were connected. 
 At this point Werkzeug pointed out a typo, I had not added a comma into the my script.js tag. Upon fixing this, the background colour worked. 
 
 <img alt=css-test-error.png src="testing-images/css-test-error.png" width=35%>
-<br>
 <img alt=css-test-jinja.png src="testing-images/css-test-jinja.png" width=35%>
 <img alt=css-test-success.png src="testing-images/css-test-success.png" width=35%>
+
+****
+**Problem-Solving - Adding images correctly using Flask**
 
 I found adding the logo image file to the navbar challenging. As I had not used Flask to add images before, I tried to add the image using the html method. 
 After researching, I realised the correct method was to include the image in the static file and use the 'url_for' Flask method to integrate images ontot the site.
@@ -39,20 +67,22 @@ The following tutorials helped with this: [Codemy - How to Use CSS Javascript an
 <img alt=logo-flask.png src="testing-images/logo-flask.png" width=50%>
 <img alt=logo-success.png src="testing-images/logo-success.png" width=25%>
 
-After creating the registration form I tried to test the functionality I built on app.py, pulling the data through to MongoDB. 
+****
+**Testing Bug - Registration page - syntax error**
+
+After creating the registration form I tried to test the functionality I built on app.py, posting the data through to MongoDB. 
 Werkzeug pointed out a mistake I made with a typo and formatting of my python code. I needed to remove the '.html' on the 'register' variable so the 'insert_one()' method worked properly.
 I then realised I also needed to format the code by removing some unecessary indentation. After I fixed these bugs, I entered the data into the registration form and checked MongoDB to find that it had all succesfully pulled through!
 
-<img alt=register-incorrect.png src="testing-images/register-incorrect.png" width=32%>
-<img alt=register-correct.png src="testing-images/register-correct.png" width=30%>
-<br>
 <img alt=register-error.png src="testing-images/register-error.png" width=70%>
-<br>
-<img alt=register-form.png src="testing-images/register-form.png" width=25%>
 <img alt=register-data-success.png src="testing-images/register-data-success.png" width=55%>
+<img alt=register-form.png src="testing-images/register-form.png" width=25%>
+
+****
+**Testing - Defensive programming for invalid passwords**
 
 After completing the registration form, I duplicated it to create the Sign-in page. I removed all unecessary fields from the form, leaving the username and login. 
-I add functionality for this page, including some defensive programming, checking for existing users and checking for incorrect username and/or password fields. 
+I added functionality for this page, including some defensive programming, checking for existing users and checking for incorrect username and/or password fields. 
 I then tested all of the links for this, entered invalid user data and correct sign in data. All of these tests were successful.
 
 <img alt=signin-functionality.png src="testing-images/signin-functionality.png" width=55%>
@@ -60,10 +90,16 @@ I then tested all of the links for this, entered invalid user data and correct s
 <img alt=signin-incorrect.png src="testing-images/signin-incorrect.png" width=35%>
 <img alt=signin-success.png src="testing-images/signin-success.png" width=34%>
 
+****
+**Mentor Tutorial Advice - Change Python comments into Docstrings**
+
 During my mid-way tutorial session with mentor, he suggested looking into Python docstrings to replace the 'title' comments I had been making for a more professional outcome. 
 I revisited the reading in the Coding Institute module regarding Docstrings and started adding these to my code. 
 
 <img alt=comments-to-docstring.png src="testing-images/comments-to-docstrings.png" width=45%>
+
+****
+**Problem Solving for Design and UX**
 
 After building all of the user authentication, I moved onto developing cards and forms. Throughout the development of these, I constantly referred to the Chrome Dev Tools to 
 experiment with different styles, colour palettes and fonts. It also helped me to find the correct element tags and classes to style in my CSS file.
@@ -71,33 +107,28 @@ On the 'add.smoothie.hmtl' form I ran some tests on the design and found, that a
 So I added some 'helper-text' spans to aid the user experience with their data entry. 
 
 <img alt=design-1.png src="testing-images/design-1.png" width=70%>
-<br>
-<img alt=design-2.png src="testing-images/design-2.png" width=30%>
 <img alt=design-3.png src="testing-images/design-3.png" width=30%>
 
-I created the post functionality for the user to add their own recipes on the add_smoothies.html page and then tested this. This test revealed 3 bugs I needed to fix:
+****
+**Testing Smoothie Recipe Cards - 4 bugs found**
+
+I created the post functionality for the user to add their own recipes on the add_smoothies.html page and then tested this. Whilst the data was successfully being pulled from MongoDB, a few design bugs were evident. This test revealed 4 bugs I needed to fix:
 1. The image on the newly added recipe was a duplicate of the previous recipe image.
 There was an easy solution to this that I had overlooked in early development. I realised I had left the original image in the code image source code on the get_recipes.html page (where I was using a placeholder image).
 This caused the new image url to get blocked and MongoDB recieved it as null on the database. To correct this, I altered the image src to the correct jinja image request method. 
 Then I changed the 'null' data on the Mongo database to the correct image url. Once refreshed, this worked fine. 
+
 <img alt=bug-2.png src="testing-images/bug-2.png" width=30%>
-<img alt=bug-1-fix.png src="testing-images/bug-1-fix.png" width=30%>
-<br>
-<img alt=bug-1-code-incorrect.png src="testing-images/bug-1-code-incorrect.png" width=60%>
-<br>
-<img alt=bug-1-code-correct.png src="testing-images/bug-1-code-correct.png" width=50%>
-<br>
-<img alt=bug-1-db.png src="testing-images/bug-1-db.png" width=60%>
 
 2. The layout of the page did not load how expected. The new card didn't conform to the columns. To solve this, I realised I needed to move the 'for loop' in recipes.html above the column class in the code to make sure the column was inside the loop.
 
 3. The 'Materialize card tabs were not working properly.  When clicked on, the card tabs worked for one card but also activated on all other cards and the information appeared incorrectly.
 To solve this, I decided to replace these with collapsible accordians to display the recipe macros and health benefits. 
-<img alt=bug-3-1.png src="testing-images/bug-3-1.png" width=60%>
-<img alt=bug-3-2.png src="testing-images/bug-3-2.png" width=60%>
+<img alt=bug-3-1.png src="testing-images/bug-3-1.png" width=30%>
+<img alt=bug-3-2.png src="testing-images/bug-3-2.png" width=30%>
 <img alt=bug-3-fix.png src="testing-images/bug-3-fix.png" width=60%>
 
-One common bug I wasn't successful in fixing was the recipe card movement. Because the recipe cards contained a collapsible this causes a gap between the cards when the collapsible is opened. 
+4. One common bug I wasn't successful in fixing was the recipe card movement. Because the recipe cards contained a collapsible this causes a gap between the cards when the collapsible is opened. I looked into how to fix this. I tried limiting the height of the image and the height of the card. These both worked but caused other layout problems. This is something I will look into fixing in the future. 
 <br>
 <img alt=bug-gap2.png src="testing-images/bug-gap2.png" width=60%>
 
@@ -160,10 +191,8 @@ User Stories can be found in [The README.md UX](https://github.com/RoxJade/nutri
 As I developed the site, I used the Materialize grid system to maintain the site's responsiveness. Towards the end of development I reviewed this and included some additional media queries, mainly for mobile screens. 
 At this point I ran tests on mobile, tablet, desktop and large screen displays. 
 
-I ran into issues with the search bar. I found that I needed to repeat the 'search bar' code for mobile/tablet and desktop screens to allow the buttons to fall from the side of the search field, to beneath.
+I ran into some screen issues with the search bar and found that I needed to repeat the 'search bar' code for mobile/tablet and desktop screens to allow the buttons to fall from the side of the search field, to beneath.
 To see more responsive displays, see the [readme.md](https://github.com/RoxJade/nutri-smooth/blob/master/README.md).
-<br>
-<img alt=responsive2.png src="testing-images/responsive-2.png" width=60%>
 
 # Automated Testing
 
@@ -227,27 +256,9 @@ Lighthouse suggested to include meta data about the site to improve SEO. I added
 
 Once I had addressed some of the suggestions from Lighthouse, I generated the Lighthouse report again, see before and after results:
 <br>
+**Before and After**
 <img alt=lighthouse-before.png src="testing-images/lighthouse-before.png" width=45%>
 <img alt=lighthouse-after.png src="testing-images/lighthouse-after.png" width=45%>
-
-# Deployment 
-
-I started the project by creating a repository in GitHub and used the Gitpod IDE to write the code. I deployed the app to Heroku at the start of production.
-To deploy the Nutri-smooth web application, I used Heroku. Here is a step-by-step account of the process:
-
-Before the deployment process, I created a new collection on MongoDB with three sub-collections to store user data, smoothie recipe data and smoothie category data.
-<br>
-<img alt=mongo-db.png src="testing-images/mongo-db.png" width=50%>
-
-1. I started by creating a requirements.txt to list all apps and dependencies required to run the site. 
-2. In the Gitpod terminal I used the command 'echo web: python app.py > Procfile' to create a Procfile for Heroku to to read the app.py file.
-3. I logged into Heroku and created a new app, calling it 'nutri-smooth' to match the GitHub repository and the title/logo of the site.
-4. I chose automatic deployment from my GitHub repository, specifying the 'nutri-smooth' repo-name.
-5. Once found, I connected it to my app. 
-6. Before enabling the automatic deployment, I entered the configuration variables (hidden from Heroku inside the env.py file). This included the IP address, port, the secret key (generated using randomkeygenerator.com) a link to MongoDB and the 'nutri_smooth' database. 
-7. Before deploying the site, I went back to Gitpod and committed the Procfile and requirements.txt.
-8. Going back to Heroku, I enabled the automatic deployment and deploy branch. Heroku then built the app and successfully deployed it.
-There were no issues or problems during the heroku deployment process. 
 
 # Browser Tests
 
@@ -279,8 +290,8 @@ Below is a detailed review of the full functionality of the site and the manual 
 - **Smoothie recipe cards:**
     - Hover over shadow occurs for each card. Works as expected.
     - Card info displays: Image/alt message should appear, smoothie title, smoothie category, ingredients and user created by information. Works as expected **if user adds an image**
-        - **Image Bug** Note, if user submits a new smoothie and chooses not to add an image link, this causes the card title to sit above the card and doesn't look good. In futuure, this is somthing I need to fix. I'm limited for time now, but when I have the chance, possible solutions could be: 
-    To create an 'if condition' on the recipe page, if users do not include an image, it adds an alternative stockholder-smoothie image in it's place.
+        - **Image Bug found**: Note, if user submits a new smoothie and chooses not to add an image link, this causes the card title to sit above the card and doesn't look good. In futuure, this is somthing I need to fix. 
+        I'm limited for time now, but when I have the chance, possible solutions could be: To create an 'if condition' on the recipe page, if users do not include an image, it adds an alternative stockholder-smoothie image in it's place.**
     - Hover over heart icon causes tooltip indication of 'favourite' (if user has chosen to 'favourite' the recipe when adding).  Works as expected.
     - Collapsible accordian expands to reveal macro information and health benefits on each card. Works as expected, **however**, once expanded, it intrudes on the space below, causing a large gap between the next card, unless all cards on that row have been expanded.
     - Edit/delete (plus/bin icons) appear with tooltip indicating 'Edit?'/'Delete' if the recipe belongs to that user (at bottom of card). On click, they take you to the relevant links. Works as expected.

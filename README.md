@@ -97,18 +97,134 @@ Below is a selection of wireframe designs for desktop, mobile and tablet. All pa
 <img alt=wire-4.png src="testing-images/wire-4.png" width=50%>
 
 # Features
-<img alt=responsive-1.png src="testing-images/responsive-1.png" width=50%>
 
+<img alt=responsive-1.png src="testing-images/responsive-1.png" width=50%>
+<br>
 
 ## Home/Index page
+The main home page to grab the attention of the user and draw them in with about paragraph and links to register/sign up/see all smoothies.
 
--Navbar
+- Navbar:
     - Navbar displays the Nutri-Smooth logo (which contains a home page link)
-    - Links in navbar displayed to site visitor include: Home, Smoothies, Sign In and Register. Links in navbar displayed to registered/returning user include: Add Smoothie and Profile (but remove)
+    - Links in navbar displayed to site visitor include: Home, Smoothies, Sign In and Register. 
+    - Links in navbar displayed to registered/returning user include: Add Smoothie, Profile and Log Out.
+    - Links in navbar displayed to admin user also include: Manage Categories.
     - Sign In is an icon, a tooltip will occur when hovered over 'Sign in?'
-    - On mobile and tablet screens, the navbar converts a side nav and a 'hamburger' icon menu appears on the left side dropdown with the same links.
+    - On mobile and tablet screens, the navbar converts a side nav and a 'hamburger' icon menu appears on the left side dropdown with the same links and centers the logo.
 
+- Parallax feature:
+    - Scrolls down over two images creating 3D movement illusion with an 'about' paragraph in the middle of container.
 
+- 3 Card Features:
+    - Three static image cards with, hover-over shadow effect, beneath the parallax with links in title's and paragraph's to take to user to Smoothies / Sign In / Register.
+
+- Footer:
+    - Footer displays the Nutri-Smooth logo (which contains a home page link).
+    - Beneath logo an 'about' paragraph is displayed.
+    - Links in footer displayed to site visitor include: Home, Smoothies, Sign In and Register. 
+    - Links in footer displayed to registered/returning user include: Add Smoothie, Profile and Log Out.
+    - Links in footer displayed to admin user also include: Manage Categories.
+    - The footer contains 3 social icon links, that take you to the relevant site, targeting new pages.
+    - A copyright logo and author name is also present.
+
+<br>
+<img alt=responsive-2.png src="testing-images/responsive-2.png" width=50%>
+<br>
+
+## Smoothies page
+The smoothie recipe page to enable all visitors to see smoothie recipes added by community and a search-smoothie function.
+
+- Search Bar:
+    - Search bar can search for smoothie's based on name/category name/ingredients.
+    - Has a 'submit search' button and a 'cancel' button to remove the current search and return user to all smoothies.
+
+- Smoothie Cards:
+    - Hover-over shadow effect for each card.
+    - Card info displays: Image/alt message if user does not supply image, smoothie title, smoothie category, ingredients and user created by information.
+    - Hover over heart icon causes tooltip indication of 'favourite' (if user has chosen to 'favourite' the recipe when adding).
+    - Collapsible accordian expands to reveal macro information and health benefits on each card.
+    - If user is signed-in, an edit and delete (plus/bin icons) appear with tooltip indicating 'Edit?'/'Delete' if the recipe belongs to that user (at bottom of card). On click, they take you to the relevant links.
+    - Delete icon causes pop-up modal questioning deletion upon user click. Modal delete button deletes smoothie. Modal cancel icon returns user to 'smoothies' page.
+
+<br>
+<img alt=responsive-3.png src="testing-images/responsive-3.png" width=50%>
+<br>
+
+## Sign In / Register pages
+The register and sign-in pages are similar, they both similar forms and request user information relevant to the user signing in or registering a new account.
+
+- Register / Sign In forms:
+    - Form fields with required information validate correct user entry - green indication/'great' helper text appears when user has added information within the set parameters. 
+    - Form fields with required information validate incorrect user entry - red indication/'wrong' helper text appears when user has not met required parameters when entering information. 
+    - Indication text for required parameters occurs on all input fields on both pages.
+    - Register/Sign In buttons registers / sign's in user and returns a 'success' flash message success and redirects user to their profile.
+    - Link beneath both forms to redirect user to 'sign in' / 'register' pages takes user to relevant links.
+
+## User Profile page
+User profile page is similar to 'Smoothies' page, it will show all recipe cards specifically added by that user, displayed using the same card layout as seen on the smoothie recipe page.
+
+- Static welcome card displays at the top of the page with the username.
+- Display all recipes cards exclusively added by that user **(except for admin user who can see all recipes)**.
+- Collapsible accordian expands to reveal macro information and health benefits on each card.
+- Displays the edit/delete (plus/bin icons) links on each card with tooltip indication. 
+- Delete icon causes pop-up modal questioning deletion.
+- Modal delete button deletes smoothie.
+- Modal cancel icon returns user to 'smoothies' page.
+
+<br>
+<img alt=responsive-4.png src="testing-images/responsive-4.png" width=50%>
+<br>
+
+## Add Smoothie and Edit Smoothie pages
+Add Smoothie and Edit Smoothie pages show the same form for the user to add/edit a smoothie. *Registered users can only edit their own smoothie recipes.
+
+- Add Smoothie form:
+    - Form fields validate correct user entry - green indication/'great' helper text appears when user has added information within the set parameters.
+    - Form fields validate incorrect user entry - red indication/'wrong' helper text appears when user has not met required parameters when entering information.
+    - Adding an image url on the form is not 'required' if user does not want to add one.
+    - Indication text for required parameters occurs beneath each field.
+    - Category dropdown selection reveals category selection.
+    - Sumbit smoothie button saves new recipe and flashes 'success' message and returns user to smoothies page.
+    - New smoothie is added it to user profile and smoothies page.
+    - Cancel icon shows tooltip 'cancel' when hovered over and returns user to smoothies page.
+- Edit Smoothie form:   
+    - Form fields are pre-populated with data from the chosen smoothie for editing.
+    - Form fields hvae green/red validation and parameter indications beneath where needed(same as 'add_smoothie' page).
+    - Save changes button saves editing and flashes 'success' message and shows user new edit.
+    - Cancel icon shows tooltip 'cancel edit?' when hovered over and returns user to smoothies page.
+
+<br>
+<img alt=responsive-.png src="testing-images/responsive-.png" width=50%>
+<br>
+
+## Manage Categories page
+The 'Manage Categories' link will appear exclusively for the signed-in admin user and allows the admin user to add, edit and delete smoothie categories. 
+
+- Upon click, 'add new category' takes user to new 'add category' page.
+- Displays category cards with category names and edit/delete icons with indicative tooltips.
+- Delete icon causes pop-up modal questioning deletion.
+- Modal delete button deletes category.
+- Modal cancel icon returns user to 'manage categories' page.
+- Edit category takes user to 'edit category' page.
+
+<br>
+<img alt=responsive-.png src="testing-images/responsive-.png" width=50%>
+<br>
+
+## Add and Edit Category pages
+- Add category form:
+    - Add smoothie category form displayed.
+    - Add category button submits new category to 'manage categories' page and returns 'success' flash message.
+    - Cancel icon with hover-over tooltip returns user to 'manage categories' page upon click.
+- Edit category form:
+    - Edit smoothie category form displayed.
+    - Save changes button submits edited category to 'manage categories' page and returns 'success' flash message.
+    - Cancel icon with hover-over tooltip returns user to 'manage categories' page upon click.
+
+## Defensive programming 
+- All delete buttons have a built in pop-up modal upon user click to question the users decision to delete.
+- All forms with required information have the 'required' attribute, helper-text and green/red validation to guide the user.
+- Sign In page detects incorrect username and/or password upon user sign in.
 
 ## Additional considerations and features to implement in the future
 

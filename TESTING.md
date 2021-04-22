@@ -279,7 +279,7 @@ Below is a detailed review of the full functionality of the site and the manual 
 - **Smoothie recipe cards:**
     - Hover over shadow occurs for each card. Works as expected.
     - Card info displays: Image/alt message should appear, smoothie title, smoothie category, ingredients and user created by information. Works as expected **if user adds an image**
-        - **Image Bug** Note, that if user submits a new smoothie and chooses not add an image link, this causes the card title to sit above the card and doesn't look good. In futuure, this is somthing I need to fix. I'm limited for time now, but when I have the chance, possible solutions could be: 
+        - **Image Bug** Note, if user submits a new smoothie and chooses not to add an image link, this causes the card title to sit above the card and doesn't look good. In futuure, this is somthing I need to fix. I'm limited for time now, but when I have the chance, possible solutions could be: 
     To create an 'if condition' on the recipe page, if users do not include an image, it adds an alternative stockholder-smoothie image in it's place.
     - Hover over heart icon causes tooltip indication of 'favourite' (if user has chosen to 'favourite' the recipe when adding).  Works as expected.
     - Collapsible accordian expands to reveal macro information and health benefits on each card. Works as expected, **however**, once expanded, it intrudes on the space below, causing a large gap between the next card, unless all cards on that row have been expanded.

@@ -1,6 +1,6 @@
 # Testing and Deployment
 
-[Visit site Nutri-Smooth](http://nutri-smooth.herokuapp.com/index)
+[Visit site Nutri-Smooth](https://nutri-smooth.herokuapp.com/)
 
 # Contents
 

@@ -2,7 +2,7 @@
 
 # Nutri-Smooth
 
-[Visit site Nutri-Smooth](http://nutri-smooth.herokuapp.com/index)
+[Visit site Nutri-Smooth](https://nutri-smooth.herokuapp.com/)
 
 The aim of the Nutri-Smooth site is to encourage users to share a range of healthy, nutritious and tasty smoothie recipes. The site showcases a selection of smoothie recipe's, breaking down ingredients and macro-nutrients for each. 
 Nutri-Smooth is a web application allowing users to create, read, update and delete their own smoothie recipes. It also allows users to search for recipes.

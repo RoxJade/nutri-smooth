@@ -194,7 +194,7 @@ Add Smoothie and Edit Smoothie pages show the same form for the user to add/edit
     - Cancel icon shows tooltip 'cancel edit?' when hovered over and returns user to smoothies page.
 
 <br>
-<img alt=responsive-.png src="testing-images/responsive-.png" width=50%>
+<img alt=responsive-5.png src="testing-images/responsive-5.png" width=50%>
 <br>
 
 ## Manage Categories page
@@ -208,7 +208,7 @@ The 'Manage Categories' link will appear exclusively for the signed-in admin use
 - Edit category takes user to 'edit category' page.
 
 <br>
-<img alt=responsive-.png src="testing-images/responsive-.png" width=50%>
+<img alt=responsive-6.png src="testing-images/responsive-6.png" width=50%>
 <br>
 
 ## Add and Edit Category pages
